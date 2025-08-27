@@ -2,7 +2,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Experimental Branch</h1>
+      <h1>Israel</h1>
     </div>
   );
 }
