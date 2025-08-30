@@ -12,7 +12,7 @@ const AdBanner = (props: Props) => {
         setShowBanner(false);
     }
     return (
-        <div className="w-full h-10 bg-[#0C1A2D] px-4 py-2.5 flex items-center justify-between gap-5 fixed transition-all ease-linear duration-1000 md:h-11 md:px-14" style={{ top: showBanner ? '0%' : '-20%' }}>
+        <div className="w-full h-10 bg-[#0C1A2D] px-4 py-2.5 flex items-center justify-between gap-5 fixed transition-all ease-linear duration-1000 md:h-11 md:px-14 z-50" style={{ top: showBanner ? '0%' : '-20%' }}>
             <Marquee
                 gradient={false}
                 speed={50}
