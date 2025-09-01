@@ -1,0 +1,36 @@
+[
+    {
+        "title": "company",
+        "links": [
+            { "name": "Managed IT Support", "url": "#" },
+            { "name": "Cyber Security Services", "url": "/" },
+            { "name": "Cloud & Infrastructure", "url": "/" },
+            { "name": "Strategic IT Planning", "url": "/" }
+        ]
+    },
+    {
+        "title": "RESOURCES",
+        "links": [
+            { "name": "Blog", "url": "#" },
+            { "name": "Customer Case Studies", "url": "/" },
+            { "name": "Certifications & Memberships", "url": "/" },
+            { "name": "FAQs", "url": "/" }
+        ]
+    },
+    {
+        "title": "company",
+        "links": [
+            { "name": "Managed IT Support", "url": "#" },
+            { "name": "Cyber Security Services", "url": "/" },
+            { "name": "Cloud & Infrastructure", "url": "/" },
+            { "name": "Strategic IT Planning", "url": "/pres" }
+        ]
+    },
+    {
+        "title": "socials",
+        "links": [
+            { "name": "Businesses", "url": "#" },
+            { "name": "Education", "url": "/" }
+        ]
+    }
+]
