@@ -27,6 +27,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
+
 @theme inline {
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -240,3 +241,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+@keyframes width {
+  0%{
+    width: 0%; 
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-width {
+  animation: width 5s linear forwards;
+}
+
