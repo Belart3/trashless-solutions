@@ -1,12 +1,16 @@
+import Accordion from "@/components/Accordion";
+import whatWeStandFor from "@/data/whatWeStandFor.json"
+import CardItem from "@/components/CardItem";
 export default function AboutPage() {
     return (
-        <main className="">
-            <section className="px-4 space-y-16 pb-4 md:px-14">
-                <div className="flex">
-                    <div className="bg-[url('/images/about/mission.png')] lg:bg-[url('/images/about/missionBig.png')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
+        <main>
+            <section className="px-4 pb-4 md:px-14">
+            <div className="lg:mx-auto lg:max-w-[1440px] space-y-16">
+                <div>
+                    <div className="bg-[url('/Images/about/mission.png')] lg:bg-[url('/Images/about/missionBig.png')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-8 md:grid md:grid-cols-2 md:gap-5 lg:gap-10 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto">
 
                     <div className="space-y-4">
                         <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-1/3 justify-center">
@@ -16,94 +20,57 @@ export default function AboutPage() {
                         <h2 className="text-[26px] text-black font-normal">Why we Exist</h2>
                     </div>
 
-                    <p className="text-black text-[19px]">
-                    <span className="text-[#999]"> Our platform was created to</span> promote sustainable living practices, support eco-conscious businesses, and help individuals reduce their environmental footprint.</p>
+                    <div className="space-y-4 lg:ml-[-80px] md:ml-[-130px]">
 
-                    <p className="text-[#999] text-[19px]">
-                    By connecting people with local resources, educational content, and impactful events, we empower everyday actions that drive real change.</p>
+                        <p className="text-black text-[19px]">
+                        <span className="text-[#999]"> Our platform was created to</span> promote sustainable living practices, support eco-conscious businesses, and help individuals reduce their environmental footprint.</p>
 
-                </div>
-
-                <div className="space-y-8">
-
-                    <div className="space-y-4">
-                        <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-1/2 justify-center">
-                            <h1 className="text-[13px] text-[#169B4C] text-center">What We Stand For</h1>
-                        </div>
-
-                        <h2 className="text-[26px] text-black font-normal">Our Core Focus Areas</h2>
-                    </div>
-
-                    <div className="flex flex-col justify-center space-y-3">
-
-                        <div className="flex flex-col bg-[#F5F7FA] rounded-2xl w-full h-[227px] space-y-8 p-5">
-
-                            <div className=" w-16 h-16 rounded-full bg-[#ededed] items-center justify-center flex">
-                                <div className="bg-white rounded-full w-[44.95px] h-[44.95px] items-center justify-center p-2">
-                                    <div className="bg-[url('/images/icons/community.svg')] bg-center bg-cover w-full h-full"/>
-                                </div>
-                            </div>
-
-
-                            <div
-                            className="space-y-4">
-                                <p className="text-[19px]">Environmental Impact</p>
-
-                                <p className="text-[15px] text-[#666]">Reducing waste, promoting recycling, and supporting planet-positive practices.</p>
-                            </div>
-
-                        </div>
-
-                        <div className="flex flex-col bg-[#F5F7FA] rounded-2xl w-full h-[227px] space-y-8 p-5">
-
-                            <div className=" w-16 h-16 rounded-full bg-[#ededed] items-center justify-center flex">
-                                <div className="bg-white rounded-full w-[44.95px] h-[44.95px] items-center justify-center p-2">
-                                    <div className="bg-[url('/images/icons/community.svg')] bg-center bg-cover w-full h-full"/>
-                                </div>
-                            </div>
-
-
-                            <div
-                            className="space-y-4">
-                                <p className="text-[19px]">Social Causes & Inclusions</p>
-
-                                <p className="text-[15px] text-[#666]">Encouraging diverse participation and empowering underrepresented communities.</p>
-                            </div>
-
-                        </div>
-
-
-                        <div className="flex flex-col bg-[#F5F7FA] rounded-2xl w-full h-[227px] space-y-8 p-5">
-
-                            <div className=" w-16 h-16 rounded-full bg-[#ededed] items-center justify-center flex">
-                                <div className="bg-white rounded-full w-[44.95px] h-[44.95px] items-center justify-center p-2">
-                                    <div className="bg-[url('/images/icons/community.svg')] bg-center bg-cover w-full h-full"/>
-                                </div>
-                            </div>
-
-
-                            <div
-                            className="space-y-4">
-                                <p className="text-[19px]">Economic Sustainability</p>
-
-                                <p className="text-[15px] text-[#666]">Supporting local eco-friendly businesses and creating green job opportunities.</p>
-                            </div>
-
-                        </div>
+                        <p className="text-[#999] text-[19px]">
+                        By connecting people with local resources, educational content, and impactful events, we empower everyday actions that drive real change.</p>
 
                     </div>
 
                 </div>
+
+        <div className="space-y-8">
+            {/*Heading*/}
+            <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-1/2 justify-center">
+                <h1 className="text-[13px] text-[#169B4C] text-center">What We Stand For</h1>
+            </div>
+
+            <h2 className="text-[26px] text-black font-normal">Our Core Focus Areas</h2>
+
+            {/* Cards */}
+            <div className="flex flex-col justify-center gap-3 lg:flex-row lg:space-x-6 md:flex-row md:space-x-6">
+                {whatWeStandFor.map((index) => (
+                <CardItem
+                    key={index.id}
+                    title={index.title}
+                    description={index.description}
+                    icon={index.icon}
+                />
+                ))}
+            </div>
+        </div>
+
+            </div>
 
             </section>
 
-            <section className="bg-black mt-16 px-4 py-8 space-y-16">
 
-                <div className="mt-16">
-                    <div className="bg-[url('/images/about/leaf.png')] bg-center bg-cover w-full h-[287px] rounded-[8px]"/>
-                </div>
+            <section className="bg-black mt-16 px-4 py-15 space-y-16 md:px-14">
 
-                <div  className="space-y-8 flex flex-col">
+                <div className="md:grid md:grid-cols-2 md:gap-10 lg:gap-20 lg:mx-auto lg:max-w-[1440px]">
+
+                    <div className="mt-16">
+                        <div className="bg-[url('/Images/about/leaf.png')] bg-center bg-cover w-full h-[400px] rounded-[8px] md:h-[500px] lg:h-[706px]"/>
+                    </div>
+
+
+
+                <div className="mt-40 lg:space-y-[65px] space-y-14 lg:mt-78">
+
+                <div  className=" flex flex-col">
 
                     <div className="space-y-3">
 
@@ -163,7 +130,39 @@ export default function AboutPage() {
 
 
 
+                    </div>
+
+                    </div>
                 </div>
+            </section>
+
+             <section className="mt-16 px-4 py-8 space-y-16 md:px-14 lg:mx-auto lg:max-w-[1440px] ">
+
+                <div className="lg:space-y-[65px] space-y-14 lg:grid lg:grid-cols-2 lg:gap-20 lg:mx-auto lg:px-[169px]">
+
+                    <div  className=" flex flex-col">
+
+                        <div className="space-y-3">
+
+                            <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-[135px]  justify-center ">
+
+                                <h1 className="text-[13px] text-[#169B4C] text-center">How We Work</h1>
+
+                            </div>
+
+                            <h2 className="text-[26px] text-black font-normal">We Build Tools That Empower Change</h2>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+                          <Accordion />
+                    </div>
+
+                </div>
+
+
 
             </section>
 
