@@ -17,7 +17,7 @@ export default function WhoWeServe() {
         
         {/* Left Column - Image */}
         <div>
-          <div className="bg-[url('/Images/about/leaf.webp')] bg-center bg-cover w-full h-[400px] rounded-[8px] md:h-[500px] lg:h-[706px]" />
+          <div className="bg-[url('/Images/about/built-for-people-who-care-about-the-planet.webp')] bg-center bg-cover w-full h-[400px] rounded-[8px] md:h-[500px] lg:h-[706px]" />
         </div>
 
         {/* Right Column - Text */}

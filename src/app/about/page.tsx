@@ -11,7 +11,7 @@ export default function AboutPage() {
                 <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
 
                     <div>
-                        <div className="bg-[url('/Images/about/mission.webp')] lg:bg-[url('/Images/about/missionBig.webp')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
+                        <div className="bg-[url('/Images/about/our-mission-sustainability-for-everyone.webp')] lg:bg-[url('/Images/about/our-mission-sustainability-for-everyone-Big.webp')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
                     </div>
 
                     <div className="md:flex md:flex-row md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
