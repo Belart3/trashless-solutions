@@ -5,8 +5,8 @@ export default function ExamplePage() {
   return (
     <Accordion type="single" collapsible className="w-full">
       {accordionData.map((item) => (
-        <AccordionItem key={item.value} value={item.value}>
-          <AccordionTrigger className="cursor:pointer">
+        <AccordionItem key={item.value} value={item.value} className="cursor-pointer">
+          <AccordionTrigger className="cursor-pointer">
             <p className="text-[19px]">{item.title}</p>
           </AccordionTrigger>
           <AccordionContent className="pt-14">

@@ -11,14 +11,14 @@ export default function AboutPage() {
                 <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
 
                     <div>
-                        <div className="bg-[url('/Images/about/mission.png')] lg:bg-[url('/Images/about/missionBig.png')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
+                        <div className="bg-[url('/Images/about/mission.webp')] lg:bg-[url('/Images/about/missionBig.webp')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
                     </div>
 
-                    <div className="md:grid md:grid-cols-2 md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
+                    <div className="md:flex md:flex-row md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
 
                     {/* Left section */}
-                    <div className="flex flex-col gap-6 max-w-[450px]">
-                        <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit max-w-[200px] justify-center">
+                    <div className="flex flex-col gap-6 w-fit ">
+                        <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full  justify-center">
                         <h1 className="text-[13px] text-[#169B4C] text-center whitespace-nowrap">
                             Our Purpose
                         </h1>
