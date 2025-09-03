@@ -12,11 +12,11 @@ const Navbar = (props: Props) => {
                 <p>logo</p>
                 {/* nav kinks container */}
                 <div className="hidden md:flex items-center justify-center gap-8">
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">about</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">community</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">events</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">biz directory</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">market place</a>
+                    <a href="/about" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">about</a>
+                    <a href="/community" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">community</a>
+                    <a href="/events" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">events</a>
+                    <a href="/biz-directory" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">biz directory</a>
+                    <a href="/market" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">market place</a>
                 </div>
                 {/* login container */}
                 <div className="hidden md:flex items-center justify-center gap-4">
