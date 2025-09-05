@@ -1,0 +1,120 @@
+[
+  {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+  {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+  {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+    {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+    {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+    {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  }
+]
