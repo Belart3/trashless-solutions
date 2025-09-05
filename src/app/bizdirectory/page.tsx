@@ -12,7 +12,7 @@ export default function BizDirectoryPage() {
             <section className="px-4 pb-4 md:px-14">
                 <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
                     <div>
-                        <div className="bg-[url('/Images/discover-eco-friendly-businesses-mobile.png')] md:bg-[url('/Images/discover-eco-friendly-businesses-desktop.png')] bg-cover bg-center w-full h-[440px] md:h-[460px] rounded-xl"/>
+                        <div className="bg-[url('/Images/discover-eco-friendly-businesses-mobile.webp')] md:bg-[url('/Images/discover-eco-friendly-businesses-desktop.webp')] bg-cover bg-center w-full h-[440px] md:h-[460px] rounded-xl"/>
                     </div>
                 </div>
 
