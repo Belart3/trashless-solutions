@@ -1,0 +1,35 @@
+[
+    {
+        "type": "by event",
+        "categories": [
+            "all",
+            "world climate events",
+            "community cleanups",
+            "tree planting",
+            "educational workshops",
+            "zero-waste challenge",
+            "virtual webinars",
+            "business sustainability meetups"
+        ]
+    },
+    {
+        "type": "by location",
+        "categories": [
+            "all",
+            "abuja",
+            "lagos",
+            "P/Harcourt",
+            "kano",
+            "kaduna",
+            "nasarawa"
+        ]
+    },
+    {
+        "type": "by type",
+        "categories": [
+            "all",
+            "virtual",
+            "in-person"
+        ]
+    }
+]
