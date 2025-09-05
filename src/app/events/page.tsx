@@ -35,7 +35,8 @@ const page = (props: Props) => {
                     </button>
                 </div>
             </header>
-            <main className="">
+            <main className="flex flex-col gap-16 mb-16 lg:mb-[104px] lg:gap-[104px]">
+                {/*  */}
                 <div className="flex flex-col gap-16">
                     {/* filter controls/buttons */}
                     <div className="flex flex-col gap-6">
@@ -111,6 +112,50 @@ const page = (props: Props) => {
                             load more events
                         </button>
                         <div className="h-px w-full bg-[#E6E6E6]"></div>
+                    </div>
+                </div>
+                {/* Organizing a green event? */}
+                <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-start lg:gap-20">
+                    <div className="flex flex-col gap-3 items-start justify-center lg:w-[40%]">
+                        <div className="px-5 py-1 rounded-[24px] flex justify-center items-center bg-[#E8F5ED80] w-fit">
+                            <span className="capitalize text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-[#169B4C] md:text-[14px]/[21px] md:tracking-[-0.84px]">
+                                organizing a green event?
+                            </span>
+                        </div>
+                        <p className="text-[26px]/[26px] font-normal tracking-[-1.56px] text-black text-start md:text-[30px]/[36px] md:tracking-[-1.8px]">
+                            Are you a community leader, brand, or student organizing a sustainability-related event? Submit it to our platform and reach eco-conscious people across Nigeria.
+                        </p>
+                    </div>
+                    <div className="py-5 px-2.5 rounded-[12px] bg-white flex flex-col items-start justify-center gap-5 lg:w-[60%] shadow-[0px_0px_8px_0px_rgba(0,0,0,0.15)] lg:p-10">
+                        <h2 className="text-[26px]/[26px] font-normal tracking-[-1.56px] text-[#169B4C] capitalize md:text-[30px]/[36px] md:tracking-[-1.8px]">
+                            green event form
+                        </h2>
+                        <div className="w-full h-px bg-[#E6E6E6]"></div>
+                        <form className='flex flex-col gap-5 w-full'>
+                            {/* event name input */}
+                            <input type="text" className='py-2.5 px-4 rounded-[8px] h-12 capitalize placeholder-shown:text-[15px]/[22.5px] placeholder-shown:tracking-[-0.9px] placeholder-shown:text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]' placeholder='event name' name='event name' />
+                            {/* event tags input */}
+                            <input type="text" className='py-2.5 px-4 rounded-[8px] h-12 capitalize placeholder-shown:text-[15px]/[22.5px] placeholder-shown:tracking-[-0.9px] placeholder-shown:text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]' placeholder='event tags' name='event tags' />
+                            {/* date */}
+                            <input type="text" className='py-2.5 px-4 rounded-[8px] h-12 capitalize placeholder-shown:text-[15px]/[22.5px] placeholder-shown:tracking-[-0.9px] placeholder-shown:text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]' placeholder='date' name='date' />
+                            {/* time */}
+                            <input type="text" className='py-2.5 px-4 rounded-[8px] h-12 capitalize placeholder-shown:text-[15px]/[22.5px] placeholder-shown:tracking-[-0.9px] placeholder-shown:text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]' placeholder='time' name='time' />
+                            {/* location/virtual link */}
+                            <input type="text" className='py-2.5 px-4 rounded-[8px] h-12 capitalize placeholder-shown:text-[15px]/[22.5px] placeholder-shown:tracking-[-0.9px] placeholder-shown:text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]' placeholder='location/virtual link' name='location/virtual link' />
+                            {/* organizer name */}
+                            <input type="text" className='py-2.5 px-4 rounded-[8px] h-12 capitalize placeholder-shown:text-[15px]/[22.5px] placeholder-shown:tracking-[-0.9px] placeholder-shown:text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]' placeholder='organizer name' name='organizer name' />
+                            {/* event description */}
+                            <textarea className='py-2.5 px-4 rounded-[8px] h-[140px] capitalize placeholder-shown:text-[15px]/[22.5px] placeholder-shown:tracking-[-0.9px] placeholder-shown:text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]' placeholder='event description' name='event description' />
+                            {/* upload event image */}
+                            <input type="file" className='hidden' name='uploadEventImage' id='uploadEventImage' />
+                            <label htmlFor="uploadEventImage" className='py-2.5 px-4 rounded-[8px] h-12 capitalize text-[15px]/[22.5px] tracking-[-0.9px] text-[#666666] border border-[#E6E6E6] cursor-pointer md:text-[16px]/[24px] md:tracking-[-0.96px]'>upload event image</label>
+                            <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full md:w-fit" aria-label="submit form">
+                                <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                                    submit
+                                </span>
+                                <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
+                            </button>
+                        </form>
                     </div>
                 </div>
             </main>
