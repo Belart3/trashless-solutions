@@ -12,16 +12,16 @@ const Navbar = (props: Props) => {
                 <p>logo</p>
                 {/* nav kinks container */}
                 <div className="hidden md:flex items-center justify-center gap-8">
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">about</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">community</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">events</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">biz directory</a>
-                    <a href="#" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">market place</a>
+                    <a href="/about" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">about</a>
+                    <a href="/community" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">community</a>
+                    <a href="/events" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">events</a>
+                    <a href="/biz-directory" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">biz directory</a>
+                    <a href="/market" className="text-[#999999] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">market place</a>
                 </div>
                 {/* login container */}
                 <div className="hidden md:flex items-center justify-center gap-4">
                     <a href="#" className="text-[#000000] text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize">login</a>
-                    <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-10 cursor-pointer" aria-label="Join the movement">
+                    <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer" aria-label="Join the movement">
                         <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
                             join the movement
                         </span>

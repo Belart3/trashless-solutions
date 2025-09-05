@@ -7,7 +7,7 @@ import ecoEvents from "@/data/ecoEvents.json";
 import differencesMade from "@/data/differencesMade.json";
 import testimonials from "@/data/testimonials.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import CtaCard from "@/components/ctaCard";
 // Import Swiper styles
 import 'swiper/css';
@@ -58,32 +58,48 @@ export default function Home() {
   return (
     <>
       <header className="mx-4 md:mx-14 lg:mx-auto lg:px-14 lg:max-w-[1440px]">
-        <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/empowering-communities.png)] bg-cover bg-no-repeat bg-center lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
-          <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[50%]">
-            <div></div>
-            <h1 className="text-white text-[40px]/[40px] tracking-[-2.4px] font-normal text-start capitalize">
-              Empowering Communities Through Sustainable Living
-            </h1>
+        <Swiper
+          slidesPerView={1}
+          className="mySwiper flex flex-row flex-1 relative"
+          spaceBetween={16}
+          freeMode={true}
+          loop={true}
+          grabCursor={true}
+          autoplay={{ delay: 3000 }}
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={onBeforeInit}
+        >
+          <div className="flex-row gap-4 flex z-50 absolute bottom-[220px] left-4 md:bottom-[160px] md:left-[56px]">
+            <button className="border border-[#333333] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer bg-white" aria-label="previous" ref={prevRef}>
+              <img src="./Images/icons/black-left-arrow.svg" alt="left arrow" />
+            </button>
+            <button className="border border-[#333333] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer bg-white" aria-label="next" ref={nextRef}>
+              <img src="./Images/icons/black-right-arrow.svg" alt="right arrow" />
+            </button>
           </div>
-          <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
-            <p className="text-[15px]/[22.5px] text-white font-normal tracking-[-0.9px] text-start">
-              Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.
-            </p>
-            <div className="flex flex-col gap-4 w-full md:flex-row">
-              <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full md:w-1/2" aria-label="Join the movement">
-                <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
-                  join the movement
-                </span>
-                <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
-              </button>
-              <button className="flex gap-2 justify-center items-center rounded-[8px] bg-transparent px-5 h-12 cursor-pointer border border-[#169B4C] w-full md:w-1/2" aria-label="Explore Eco-Friendly Businesses">
-                <span className="text-[#169B4C] text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
-                  Explore Eco-Friendly Businesses
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
+          {
+            ecoConsciousBrands.map((item, index) => (
+              <SwiperSlide className="" key={index}>
+                <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/saidu-peter.webp)] bg-cover bg-no-repeat bg-center lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
+                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[50%]">
+                    <h1 className="text-white text-[40px]/[40px] tracking-[-2.4px] font-normal text-start capitalize">
+                      Empowering Communities Through Sustainable Living
+                    </h1>
+                  </div>
+                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
+                    <p className="text-[15px]/[22.5px] text-white font-normal tracking-[-0.9px] text-start">
+                      Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
       </header>
       <main className="">
         {/* How our Platform works */}
@@ -318,7 +334,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* together we make a difference */}
+        {/* hear from our members */}
         <section className="mx-4 my-16 md:mx-14 lg:mx-auto lg:max-w-[1440px] lg:px-14 lg:my-26">
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 md:gap-6">
@@ -339,7 +355,33 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-3 sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:grid-cols-none lg:gap-6">
+            {/* mobile and tablet testimonials layout */}
+            <div className="flex flex-col gap-3 sm:flex-row lg:hidden">
+              {
+                testimonials.map((item, index) => (
+                  <div className="py-5 px-2.5 rounded-[12px] border border-[#E6E6E6] bg-[#F5F7FA]" key={index}>
+                    <div className="flex flex-col gap-5 items-start">
+                      <div className="rounded-[24px] py-1 px-5 bg-[#EDEDED]">
+                        <span className="text-[13px]/[19.5px] tracking-[-0.78px] text-black">{item.type}</span>
+                      </div>
+                      <div className="h-[320px] w-full rounded-[8px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}></div>
+                      <div className="flex flex-col justify-between items-start">
+                        <div className="flex flex-col justify-center items-start gap-10">
+                          <p className="text-[19px]/[19px] font-normal tracking-[-1.14px] text-black">
+                            {item.title}
+                          </p>
+                          <p className="text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-black capitalize">
+                            – {item.name}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+            {/* desktop testimonial slider */}
+            <div className="hidden lg:flex">
               <Swiper
                 slidesPerView={1.3}
                 spaceBetween={24}
@@ -364,7 +406,7 @@ export default function Home() {
                             <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black">
                               {item.title}
                             </p>
-                            <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black">
+                            <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black capitalize">
                               – {item.name}
                             </p>
                           </div>
