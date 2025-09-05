@@ -7,12 +7,12 @@ import greenBoxNigeria from "@/data/greenBoxNigeria.json"
 export default function BizDirectoryPage() {
   return (
     <main>
-        <section className="flex flex-col gap-16">
+        <section className="flex flex-col gap-16 lg:mx-auto lg:max-w-[1440px]">
 
             <section className="px-4 pb-4 md:px-14">
                 <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
                     <div>
-                        <div className="bg-[url('/Images/about/our-mission-sustainability-for-everyone.webp')] lg:bg-[url('/Images/about/our-mission-sustainability-for-everyone-Big.webp')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
+                        <div className="bg-[url('/Images/discover-eco-friendly-businesses-mobile.png')] md:bg-[url('/Images/discover-eco-friendly-businesses-desktop.png')] bg-cover bg-center w-full h-[440px] md:h-[460px] rounded-xl"/>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ export default function BizDirectoryPage() {
 
             <section className="px-4 pb-4 md:px-14 flex flex-col gap-8">
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 pb-30">
                     <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full  justify-center items-center w-fit">
                         <h1 className="text-[13px] text-[#169B4C] text-center whitespace-nowrap">
                             Are You A Sustainable Brand?
