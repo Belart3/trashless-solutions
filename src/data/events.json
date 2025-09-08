@@ -6,7 +6,7 @@
         "location": "Tarkwa Bay, Lagos",
         "cta": "register now",
         "url": "",
-        "image": ""
+        "image": "./Images/plastic-free-lagos-cleanup.webp"
     },
     {
         "title": "DIY Composting Workshop",
@@ -15,6 +15,6 @@
         "location": "Online — Zoom",
         "cta": "Save My Spot",
         "url": "",
-        "image": ""
+        "image": "./Images/how-to-start-composting-at-home.webp"
     }
 ]

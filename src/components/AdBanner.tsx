@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Marquee from 'react-fast-marquee'
-import { useState } from 'react'
+import ads from '@/data/ads.json'
 
 
 type Props = {
@@ -15,29 +15,19 @@ const AdBanner = (props: Props) => {
             <Marquee
                 gradient={false}
                 speed={50}
+                style={{ whiteSpace: 'nowrap' }}
                 pauseOnHover={true}
                 className="text-white font-medium text-sm md:text-base"
             >
-                <p className='text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-white me-10 md:text-[16px]/[24px] md:tracking-[-0.96px]'>
-                    LDPE - 
-                    <span className='font-bold'> N380 </span>
-                    per kg
-                </p>
-                <p className='text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-white me-10'>
-                    LDPE - 
-                    <span className='font-bold'> N380 </span>
-                    per kg
-                </p>
-                <p className='text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-white me-10'>
-                    LDPE - 
-                    <span className='font-bold'> N380 </span>
-                    per kg
-                </p>
-                <p className='text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-white me-10'>
-                    LDPE - 
-                    <span className='font-bold'> N380 </span>
-                    per kg
-                </p>
+                {
+                    ads.map((ad, index) => (
+                        <p className='text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-white me-10 md:text-[16px]/[24px] md:tracking-[-0.96px]' key={index}>
+                            {ad.name} - 
+                            <span className='font-bold'> {ad.price} </span>
+                            per {ad.unit}
+                        </p>
+                    ))
+                }
             </Marquee>
             <button className='outline-none rounded-full cursor-pointer' onClick={props.handleCloseBanner} aria-label="Close advertisement banner">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import resourceHub from '@/data/resourceHub.json'
 import BlogCard from '@/components/BlogCard'
 
@@ -11,6 +12,12 @@ const resourceCategories = [
 ]
 
 const page = () => {
+    const [activeFilter, setActiveFilter] = useState('all')
+    const toggleFilter = (filter: string) => {
+        if (filter) {
+            setActiveFilter(filter);
+        }
+    }
     return (
         <div className='mx-4 md:mx-14 lg:mx-auto lg:px-14 lg:max-w-[1440px] mt-8 flex flex-col gap-16 mb-16 lg:mt-16'>
             {/* learn to live sustainably */}
@@ -40,16 +47,22 @@ const page = () => {
                 <div className="flex flex-row flex-wrap items-center justify-center gap-3">
                     {
                         resourceCategories.map((category, index) => (
-                            <button className="px-5 h-10 flex items-center justify-center rounded-[32px] border border-[#169B4C] bg-[#E8F5ED] w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px]" key={index}>
+                            <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeFilter.includes(category.toLowerCase()) ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={index}  
+                                onClick={
+                                    () => {
+                                        toggleFilter(category.toLowerCase())
+                                    }
+                                } 
+                            >
                                 {category}
-                            </button>
+                            </button>  
                         ))
                     }
                 </div>
                 <div className="flex flex-col gap-4 sm:grid sm:grid-cols-3 lg:gap-6">
                     {
                         resourceHub.map((item,index) => (
-                        <BlogCard image={item.image} type={item.type} title={item.title} subtitle={item.subtitle} key={index} />
+                            <BlogCard image={item.image} type={item.type} title={item.title} subtitle={item.subtitle} key={index} />
                         ))
                     }
                 </div>

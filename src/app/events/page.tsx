@@ -5,12 +5,12 @@ import events from '@/data/events.json'
 import { useState } from 'react'
 
 const page = () => {
-    const [activeFilters, setActiveFilters] = useState<string[]>([])
-    const toggleFilter = (filter: string) => {
-        if (activeFilters.includes(filter)) {
-            setActiveFilters(activeFilters.filter(f => f !== filter))
-        } else {
-            setActiveFilters([...activeFilters, filter])
+    const [activeFilter, setActiveFilter] = useState('all')
+    const [activeCategory, setActiveCategory] = useState('event')
+    const toggleFilter = (filter: string, type:string) => {
+        if (filter) {
+            setActiveFilter(filter);
+            setActiveCategory(type);
         }
     }
     return (
@@ -47,13 +47,19 @@ const page = () => {
                                 eventFilters.map((filterCategory, index) => (
                                     <div className="flex flex-col gap-3" key={index}>
                                         <p className="capitalize text-[15px]/[15px] font-normal tracking-[-0.9px] text-black">
-                                            {filterCategory.type}
+                                            by {filterCategory.type}
                                         </p>
                                         <div className="flex flex-row flex-wrap gap-3">
                                             {
-                                                filterCategory.categories.map((category, idx) => (
-                                                    <button className="px-5 h-10 flex items-center justify-center rounded-[32px] border border-[#169B4C] bg-[#E8F5ED] w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px]" key={idx}>
-                                                        {category}
+                                                filterCategory.categories.map((name, idx) => (
+                                                    <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeFilter.includes(name) && activeCategory.includes(filterCategory.type) ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
+                                                        onClick={
+                                                            () => {
+                                                                toggleFilter(name, filterCategory.type)
+                                                            }
+                                                        } 
+                                                    >
+                                                        {name}
                                                     </button>    
                                                 ))
                                             }
@@ -68,7 +74,7 @@ const page = () => {
                         {
                             events.map((event, index) => (
                                 <div className="p-2.5 rounded-[12px] flex flex-col gap-6 border border-[#E6E6E6] bg-[#F5F7FA] lg:flex-row lg:p-5 lg:gap-10" key={index}>
-                                    <div className="rounded-[8px] w-full h-[230px] bg-[#E6E6E6] lg:w-[300px] lg:h-[280px] lg:shrink-0"></div>
+                                    <div className="rounded-[8px] w-full h-[230px] bg-cover bg-center bg-no-repeat lg:w-[300px] lg:h-[280px] lg:shrink-0" style={{backgroundImage: `url(${event.image})`}}></div>
                                     <div className="flex flex-col gap-5 items-start justify-center">
                                         <div className="flex flex-col gap-2 items-start justify-center lg:flex-row lg:gap-3">
                                             <div className="px-5 flex flex-row gap-2 rounded-[32px] items-center justify-center border border-[#E6E6E6] text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-center text-black w-fit h-10">
@@ -99,7 +105,7 @@ const page = () => {
                                             <p className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-black text-start lg:text-[14px]/[21px] lg:tracking-[-0.84px]">
                                                 Over 100 Sustainaibility Ambassadors like you have registered
                                             </p>
-                                            <div className="w-1/2 h-10 bg-contain bg-center bg-no-repeat bg-[url(/Images/registered-sustainability-ambassadors.webp)]"></div>
+                                            <div className="w-1/2 h-10 bg-contain bg-[0%_50%] bg-no-repeat bg-[url(/Images/registered-sustainability-ambassadors.webp)]"></div>
                                         </div>
                                     </div>
                                 </div>
