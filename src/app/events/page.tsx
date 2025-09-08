@@ -3,19 +3,11 @@ import React from 'react'
 import eventFilters from '@/data/eventFilters.json'
 import events from '@/data/events.json'
 import { useState } from 'react'
-import { filter } from 'framer-motion/client'
 
 const page = () => {
     const [activeFilter, setActiveFilter] = useState('all')
     const [activeCategory, setActiveCategory] = useState('event')
     const toggleFilter = (filter: string, type:string) => {
-        // if (activeFilter.includes(filter)) {
-        //     setActiveFilter(activeFilter.filter(f => f !== filter))
-        // } else if(activeFilter.includes(filter)) {
-            
-        // } else {
-        //     setActiveFilter([...activeFilter, filter])
-        // }
         if (filter) {
             setActiveFilter(filter);
             setActiveCategory(type);
