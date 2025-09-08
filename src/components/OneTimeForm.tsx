@@ -34,7 +34,7 @@ export default function OneTimeForm({ fields, heading }: OneTimeFormProps) {
       <div className="flex justify-center md:justify-start">
         <button
           type="submit"
-          className="mt-4 w-full md:w-fit bg-[#169B4C] text-white font-medium p-5 rounded-sm shadow hover:bg-green-700 transition flex flex-row items-center justify-center gap-2"
+          className="mt-4 w-full md:w-fit bg-[#169B4C] text-white font-medium px-5 py-2.5 rounded-sm shadow hover:bg-green-700 transition flex flex-row items-center justify-center gap-2"
         >
           <span>Donate Now</span>
           <img src="./Images/icons/right-arrow.svg" alt="donate now" />
