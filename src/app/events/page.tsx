@@ -4,9 +4,7 @@ import eventFilters from '@/data/eventFilters.json'
 import events from '@/data/events.json'
 import { useState } from 'react'
 
-type Props = {}
-
-const page = (props: Props) => {
+const page = () => {
     const [activeFilters, setActiveFilters] = useState<string[]>([])
     const toggleFilter = (filter: string) => {
         if (activeFilters.includes(filter)) {
