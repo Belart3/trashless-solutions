@@ -60,7 +60,7 @@ export default function CardList({ items }: CardListProps) {
   return (
     <div className="flex flex-col gap-4">
       {/* Cards */}
-      <div className="flex flex-col gap-4 sm:grid sm:grid-cols-3 sm:gap-6">
+      <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
         {visibleItems.map((item, index) => (
           <div
             key={index}

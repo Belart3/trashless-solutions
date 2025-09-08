@@ -49,7 +49,7 @@ export default function DonationPage() {
             </h2>
 
             {/* Cards */}
-            <div className="flex flex-col justify-center gap-3 md:flex-row lg:flex-row lg:gap-6 md:gap-6">
+            <div className="flex flex-col justify-center gap-3 md:grid md:grid-cols-2 lg:flex-row lg:gap-6 md:gap-6">
               {whyYourSupportMatters.map((item) => (
                 <CardItem
                   key={item.id}
@@ -81,9 +81,9 @@ export default function DonationPage() {
               </h2>
             </div>
 
-            <div className="flex flex-col gap-8 md:flex-row md:gap-20">
+            <div className="flex flex-col gap-8 lg:flex-row md:gap-20">
               {/* Selector */}
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <Selector
                   items={giveOnceOrGiveMonthly}
                   selected={selected}
