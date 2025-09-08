@@ -22,7 +22,7 @@ export default function Location({ items }: LocationProps) {
               ${
                 isSelected
                   ? "border-green-600 text-green-600 bg-[#E8F5ED]"
-                  : "border-gray-300 text-gray-700 hover:border-green-500 hover:text-green-500"
+                  : "border-gray-300 text-gray-700 hover:bg-[#E8F5ED] hover:text-gray-700"
               }`}
           >
             <p className="text-[15px] text-center font-medium">{item.title}</p>
