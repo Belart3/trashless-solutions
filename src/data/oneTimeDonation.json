@@ -1,0 +1,7 @@
+[
+  { "title": "Name", "type": "text" },
+  { "title": "Email", "type": "email" },
+  { "title": "Phone Number", "type": "tel" },
+  { "title": "Amount", "type": "text" },
+  { "title": "Payment Method", "type": "text" }
+]

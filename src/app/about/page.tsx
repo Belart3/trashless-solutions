@@ -2,26 +2,17 @@ import Accordion from "@/components/Accordion";
 import whatWeStandFor from "@/data/whatWeStandFor.json"
 import CardItem from "@/components/CardItem";
 import WhoWeServe from "@/components/whoWeServe";
+import howWeWork from "@/data/howWeWork.json"
 
 export default function AboutPage() {
     return (
         <main>
-        <section className="flex flex-col gap-16">
+        <section className="flex flex-col gap-16 pb-30">
             <section className="px-4 pb-4 md:px-14">
                 <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
 
                     <div className="flex flex-col gap-4">
                         <div className="bg-[url('/Images/about/our-mission-sustainability-for-everyone.webp')] lg:bg-[url('/Images/about/our-mission-sustainability-for-everyone-Big.webp')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
-
-                        <div className="flex flex-col md:flex-row gap-4">
-                        <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-10 cursor-pointer" aria-label="Join the movement">
-                            <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
-                                join the movement
-                            </span>
-                            <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
-                        </button>
-
-                        </div>
                     </div>
 
                     <div className="md:flex md:flex-row md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
@@ -78,7 +69,7 @@ export default function AboutPage() {
                 <WhoWeServe />
             </section>
 
-            <section className="px-4 py-8 flex flex-col gap-16 md:px-14 lg:mx-auto lg:max-w-[1440px] pb-30">
+            <section className="px-4 py-8 flex flex-col gap-16 md:px-14 lg:mx-auto lg:max-w-[1440px]">
                 <div className="flex flex-col gap-14 lg:gap-[65px] lg:flex-row lg:flex  lg:mx-auto lg:px-[169px]">
 
                     <div className="flex flex-col gap-3">
@@ -93,7 +84,7 @@ export default function AboutPage() {
                     </div>
 
                     <div>
-                        <Accordion />
+                        <Accordion items={howWeWork} />
                     </div>
                 </div>
             </section>

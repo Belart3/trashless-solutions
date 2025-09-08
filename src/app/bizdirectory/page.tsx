@@ -4,10 +4,12 @@ import location from "@/data/location.json"
 import Location from "@/components/Location";
 import GreenBoxNigeria from "@/components/GreenBoxNigeria";
 import greenBoxNigeria from "@/data/greenBoxNigeria.json"
+import BusinessSubmissionForm from "@/components/BusinessSubmissionForm";
+import businessSubmissionForm from "@/data/businessSubmissionForm.json";
 export default function BizDirectoryPage() {
   return (
     <main>
-        <section className="flex flex-col gap-16 lg:mx-auto lg:max-w-[1440px]">
+        <section className="flex flex-col gap-16 lg:mx-auto lg:max-w-[1440px] pb-30">
 
             <section className="px-4 pb-4 md:px-14">
                 <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
@@ -60,14 +62,29 @@ export default function BizDirectoryPage() {
 
             <section className="px-4 pb-4 md:px-14 flex flex-col gap-8">
 
-                <div className="flex flex-col gap-3 pb-30">
+                <div className="flex flex-col gap-3">
                     <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full  justify-center items-center w-fit">
                         <h1 className="text-[13px] text-[#169B4C] text-center whitespace-nowrap">
                             Are You A Sustainable Brand?
                         </h1>
 
                     </div>
-                        <h2 className="text-[26px] text-black font-normal">Get featured in our growing directory of eco-friendly businesses in Nigeria. Reach customers who care about the planet and are actively looking to support brands like yours.</h2>
+
+<div className="flex flex-col gap-8 md:flex-row md:gap-20">
+              {/* Selector */}
+              <div className="md:w-1/2">
+                        <h2 className="text-[30px] text-black font-normal">Get featured in our growing directory of eco-friendly businesses in Nigeria. Reach customers who care about the planet and are actively looking to support brands like yours.</h2>
+              </div>
+
+              {/* Donation Form (heading updates with selected option) */}
+              <div className="flex-1">
+                <BusinessSubmissionForm
+                  fields={businessSubmissionForm}
+                  heading="Business Submission Form"
+                />
+              </div>
+            </div>
+
                 </div>
 
             </section>
