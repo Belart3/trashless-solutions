@@ -74,7 +74,7 @@ const page = () => {
                         {
                             events.map((event, index) => (
                                 <div className="p-2.5 rounded-[12px] flex flex-col gap-6 border border-[#E6E6E6] bg-[#F5F7FA] lg:flex-row lg:p-5 lg:gap-10" key={index}>
-                                    <div className="rounded-[8px] w-full h-[230px] bg-[#E6E6E6] lg:w-[300px] lg:h-[280px] lg:shrink-0"></div>
+                                    <div className="rounded-[8px] w-full h-[230px] bg-cover bg-center bg-no-repeat lg:w-[300px] lg:h-[280px] lg:shrink-0" style={{backgroundImage: `url(${event.image})`}}></div>
                                     <div className="flex flex-col gap-5 items-start justify-center">
                                         <div className="flex flex-col gap-2 items-start justify-center lg:flex-row lg:gap-3">
                                             <div className="px-5 flex flex-row gap-2 rounded-[32px] items-center justify-center border border-[#E6E6E6] text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-center text-black w-fit h-10">
@@ -105,7 +105,7 @@ const page = () => {
                                             <p className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-black text-start lg:text-[14px]/[21px] lg:tracking-[-0.84px]">
                                                 Over 100 Sustainaibility Ambassadors like you have registered
                                             </p>
-                                            <div className="w-1/2 h-10 bg-contain bg-center bg-no-repeat bg-[url(/Images/registered-sustainability-ambassadors.webp)]"></div>
+                                            <div className="w-1/2 h-10 bg-contain bg-[0%_50%] bg-no-repeat bg-[url(/Images/registered-sustainability-ambassadors.webp)]"></div>
                                         </div>
                                     </div>
                                 </div>
