@@ -1,0 +1,20 @@
+[
+    {
+        "title": "resources",
+        "menu": [
+            { "name": "blog", "href": "/blog" },
+            { "name": "case studies", "href": "/case-studies" },
+            { "name": "ebooks", "href": "/ebooks" },
+            { "name": "webinars", "href": "/webinars" }
+        ]
+    },
+    {
+        "title": "company",
+        "menu": [
+            { "name": "about us", "href": "/about" },
+            { "name": "careers", "href": "/careers" },
+            { "name": "press", "href": "/press" },
+            { "name": "contact", "href": "/contact" }
+        ]
+    }
+]

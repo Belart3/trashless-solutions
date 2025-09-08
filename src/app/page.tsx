@@ -12,42 +12,33 @@ import CtaCard from "@/components/ctaCard";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import BlogCard from "@/components/BlogCard";
+import { useInView } from "framer-motion";
 
 export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const stepperRef = useRef(null);
-
-  const [isInView, setIsInView] = useState(false);
+  const isInView = useInView(stepperRef, { once: false, amount: 0.5 });
   const [activeStepper, setActiveStepper] = useState(0);
+  const duration = 3000;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.5 } 
-    );
-
-    if (stepperRef.current) {
-      observer.observe(stepperRef.current);
-    }
-
+    let intervalId: NodeJS.Timeout;
+    
     if (isInView) {
-      const interval = setInterval(() => {
+      intervalId = setInterval(() => {
         setActiveStepper((prev) => (prev + 1) % ecoEvents.length);
-      }, 5000);
-      return () => clearInterval(interval);
+      }, duration);
     }
 
     return () => {
-      if (stepperRef.current) {
-        observer.unobserve(stepperRef.current);
+      if (intervalId) {
+        clearInterval(intervalId);
       }
     };
-    
-  })
+  }, [isInView]);
+
 
   const onBeforeInit = (swiper) => {
     if (swiper.params.navigation) {
@@ -94,6 +85,19 @@ export default function Home() {
                     <p className="text-[15px]/[22.5px] text-white font-normal tracking-[-0.9px] text-start">
                       Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.
                     </p>
+                    <div className="flex flex-col items-center justify-center gap-4 w-full sm:flex-row sm:justify-start">
+                      <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="Join the movement">
+                        <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                          join the movement
+                        </span>
+                        <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
+                      </button>
+                      <button className="flex gap-2 justify-center items-center rounded-[8px] bg-transparent border border-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="explore eco-friendly businesses">
+                        <span className="text-[#169B4C] text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                          explore eco-friendly businesses
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -241,12 +245,12 @@ export default function Home() {
                           </h3>
                           <img src="./Images/icons/green-right-arrow.svg" alt="" className="size-6" />
                         </div>
-                        <p className={`text-[15px]/[22.5px] tracking-[-0.9px] font-normal text-[#999999] ${activeStepper === index ? 'block' : 'hidden'}`}>
+                        <p className={`text-[15px]/[22.5px] tracking-[-0.9px] font-normal text-[#999999] ${ activeStepper === index ? 'block' : 'hidden'}`}>
                           {item.description}
                         </p>
                       </div>
                       <div className="w-full h-[2px] bg-[#333333]">
-                        <div className={`h-full bg-[#169B4C] transition-all duration-[5000] ease-linear ${activeStepper === index ? 'block animate-width' : 'hidden'}`}></div>
+                        <div className={`h-full bg-[#169B4C] transition-all ease-linear ${ activeStepper === index ? 'block animate-width' : 'hidden'}`} style={{animationDuration: `${duration}`}}></div>
                       </div>
                     </div>
                   ))
@@ -273,24 +277,10 @@ export default function Home() {
                   </a>
                 </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:grid sm:grid-cols-3 gap-6">
               {
-                resourceHub.map((item,index) => (
-                  <div className="flex flex-col gap-2 md:gap-4 md:flex-1" key={index}>
-                    <div className="flex items-start justify-start rounded-[8px] p-3 h-[230px] bg-cover bg-center bg-no-repeat md:h-[310px] w-full bg-[#F5F7FA]" style={{backgroundImage: `url(${item.image})`}}>
-                      <div className="flex items-center justify-center rounded-[24px] py-1 px-5 backdrop-blur-[2px] bg-[#FFFFFF33] border border-[#E6E6E64D]">
-                        <span className="text-[13px]/[19.5px] font-normal text-white tracking-[-0.78px] capitalize md:text-[14px]/[21px] md:tracking-[-0.84px]">{item.type}</span>
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-black text-[19px]/[19px] font-normal tracking-[-1.14px] md:text-[21px]/[25px] md:tracking-[-1.26px]">
-                        {item.title}
-                      </h3>
-                      <p className="text-[15px]/[22.5px] text-[#666666] font-normal tracking-[-0.9px] md:text-[16px]/[24px] md:tracking-[-0.96px]">
-                        {item.subtitle}
-                      </p>
-                    </div>
-                  </div>
+                resourceHub.slice(0,3).map((item,index) => (
+                  <BlogCard image={item.image} type={item.type} title={item.title} subtitle={item.subtitle} key={index} />
                 ))
               }
             </div>
