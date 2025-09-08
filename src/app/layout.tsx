@@ -25,7 +25,6 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
-        <AdBanner />
         <Navbar />
         {children}
         <Footer />

@@ -4,15 +4,14 @@ import Marquee from 'react-fast-marquee'
 import { useState } from 'react'
 
 
-type Props = {}
+type Props = {
+    showBanner?: boolean;
+    handleCloseBanner?: () => void;
+}
 
 const AdBanner = (props: Props) => {
-    const [showBanner, setShowBanner] = useState(true);
-    const handleCloseBanner = () => {
-        setShowBanner(false);
-    }
     return (
-        <div className="w-full h-10 bg-[#0C1A2D] px-4 py-2.5 flex items-center justify-between gap-5 fixed transition-all ease-linear duration-1000 md:h-11 md:px-14 z-50" style={{ top: showBanner ? '0%' : '-20%' }}>
+        <div className="w-full h-10 bg-[#0C1A2D] px-4 py-2.5 flex items-center justify-between gap-5 fixed transition-all ease-linear duration-1000 md:h-11 md:px-14 z-50" style={{ top: props.showBanner ? '0%' : '-20%' }}>
             <Marquee
                 gradient={false}
                 speed={50}
@@ -40,7 +39,7 @@ const AdBanner = (props: Props) => {
                     per kg
                 </p>
             </Marquee>
-            <button className='outline-none rounded-full cursor-pointer' onClick={handleCloseBanner}>
+            <button className='outline-none rounded-full cursor-pointer' onClick={props.handleCloseBanner} aria-label="Close advertisement banner">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fillRule="evenodd" clipRule="evenodd" d="M15.7062 10.129L9.85351 15.9816L8.79285 14.921L14.6455 9.06836L15.7062 10.129Z" fill="white"/>
                 <path fillRule="evenodd" clipRule="evenodd" d="M9.84971 9.06641L15.7063 14.9241L14.6455 15.9847L8.78894 10.1269L9.84971 9.06641Z" fill="white"/>
