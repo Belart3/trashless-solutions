@@ -3,16 +3,22 @@ import React from 'react'
 import eventFilters from '@/data/eventFilters.json'
 import events from '@/data/events.json'
 import { useState } from 'react'
+import { filter } from 'framer-motion/client'
 
-type Props = {}
-
-const page = (props: Props) => {
-    const [activeFilters, setActiveFilters] = useState<string[]>([])
-    const toggleFilter = (filter: string) => {
-        if (activeFilters.includes(filter)) {
-            setActiveFilters(activeFilters.filter(f => f !== filter))
-        } else {
-            setActiveFilters([...activeFilters, filter])
+const page = () => {
+    const [activeFilter, setActiveFilter] = useState('all')
+    const [activeCategory, setActiveCategory] = useState('event')
+    const toggleFilter = (filter: string, type:string) => {
+        // if (activeFilter.includes(filter)) {
+        //     setActiveFilter(activeFilter.filter(f => f !== filter))
+        // } else if(activeFilter.includes(filter)) {
+            
+        // } else {
+        //     setActiveFilter([...activeFilter, filter])
+        // }
+        if (filter) {
+            setActiveFilter(filter);
+            setActiveCategory(type);
         }
     }
     return (
@@ -49,13 +55,19 @@ const page = (props: Props) => {
                                 eventFilters.map((filterCategory, index) => (
                                     <div className="flex flex-col gap-3" key={index}>
                                         <p className="capitalize text-[15px]/[15px] font-normal tracking-[-0.9px] text-black">
-                                            {filterCategory.type}
+                                            by {filterCategory.type}
                                         </p>
                                         <div className="flex flex-row flex-wrap gap-3">
                                             {
-                                                filterCategory.categories.map((category, idx) => (
-                                                    <button className="px-5 h-10 flex items-center justify-center rounded-[32px] border border-[#169B4C] bg-[#E8F5ED] w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px]" key={idx}>
-                                                        {category}
+                                                filterCategory.categories.map((name, idx) => (
+                                                    <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeFilter.includes(name) && activeCategory.includes(filterCategory.type) ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
+                                                        onClick={
+                                                            () => {
+                                                                toggleFilter(name, filterCategory.type)
+                                                            }
+                                                        } 
+                                                    >
+                                                        {name}
                                                     </button>    
                                                 ))
                                             }
