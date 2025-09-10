@@ -1,0 +1,19 @@
+[
+    {
+        "title": "resources",
+        "menu": [
+            { "name": "blogs", "href": "/blogs" },
+            { "name": "case studies", "href": "/case-studies" },
+            { "name": "ebooks", "href": "/ebooks" },
+            { "name": "webinars", "href": "/webinars" }
+        ]
+    },
+    {
+        "title": "company",
+        "menu": [
+            { "name": "contact", "href": "/contact" },
+            { "name": "donation", "href": "/donation" },
+            { "name": "legal", "href": "/legal" }
+        ]
+    }
+]

@@ -7,47 +7,40 @@ import ecoEvents from "@/data/ecoEvents.json";
 import differencesMade from "@/data/differencesMade.json";
 import testimonials from "@/data/testimonials.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import CtaCard from "@/components/ctaCard";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import BlogCard from "@/components/BlogCard";
+import { useInView } from "framer-motion";
+import Testimonials from "@/components/Testimonials";
+import MobileTestimonials from "@/components/MobileTestimonials";
 
 export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const stepperRef = useRef(null);
-
-  const [isInView, setIsInView] = useState(false);
+  const isInView = useInView(stepperRef, { once: false, amount: 0.5 });
   const [activeStepper, setActiveStepper] = useState(0);
+  const duration = 3000;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.5 } 
-    );
-
-    if (stepperRef.current) {
-      observer.observe(stepperRef.current);
-    }
-
+    let intervalId: NodeJS.Timeout;
+    
     if (isInView) {
-      const interval = setInterval(() => {
+      intervalId = setInterval(() => {
         setActiveStepper((prev) => (prev + 1) % ecoEvents.length);
-      }, 5000);
-      return () => clearInterval(interval);
+      }, duration);
     }
 
     return () => {
-      if (stepperRef.current) {
-        observer.unobserve(stepperRef.current);
+      if (intervalId) {
+        clearInterval(intervalId);
       }
     };
-    
-  })
+  }, [isInView]);
+
 
   const onBeforeInit = (swiper) => {
     if (swiper.params.navigation) {
@@ -58,32 +51,61 @@ export default function Home() {
   return (
     <>
       <header className="mx-4 md:mx-14 lg:mx-auto lg:px-14 lg:max-w-[1440px]">
-        <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/empowering-communities.png)] bg-cover bg-no-repeat bg-center lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
-          <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[50%]">
-            <div></div>
-            <h1 className="text-white text-[40px]/[40px] tracking-[-2.4px] font-normal text-start capitalize">
-              Empowering Communities Through Sustainable Living
-            </h1>
+        <Swiper
+          slidesPerView={1}
+          className="mySwiper flex flex-row flex-1 relative"
+          spaceBetween={16}
+          freeMode={true}
+          loop={true}
+          grabCursor={true}
+          autoplay={{ delay: 3000 }}
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={onBeforeInit}
+        >
+          <div className="flex-row gap-4 flex z-50 absolute bottom-[220px] left-4 md:bottom-[160px] md:left-[56px]">
+            <button className="border border-[#333333] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer bg-white" aria-label="previous" ref={prevRef}>
+              <img src="./Images/icons/black-left-arrow.svg" alt="left arrow" />
+            </button>
+            <button className="border border-[#333333] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer bg-white" aria-label="next" ref={nextRef}>
+              <img src="./Images/icons/black-right-arrow.svg" alt="right arrow" />
+            </button>
           </div>
-          <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
-            <p className="text-[15px]/[22.5px] text-white font-normal tracking-[-0.9px] text-start">
-              Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.
-            </p>
-            <div className="flex flex-col gap-4 w-full md:flex-row">
-              <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full md:w-1/2" aria-label="Join the movement">
-                <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
-                  join the movement
-                </span>
-                <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
-              </button>
-              <button className="flex gap-2 justify-center items-center rounded-[8px] bg-transparent px-5 h-12 cursor-pointer border border-[#169B4C] w-full md:w-1/2" aria-label="Explore Eco-Friendly Businesses">
-                <span className="text-[#169B4C] text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
-                  Explore Eco-Friendly Businesses
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
+          {
+            ecoConsciousBrands.map((item, index) => (
+              <SwiperSlide className="" key={index}>
+                <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/saidu-peter.webp)] bg-cover bg-no-repeat bg-center lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
+                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[50%]">
+                    <h1 className="text-white text-[40px]/[40px] tracking-[-2.4px] font-normal text-start capitalize">
+                      Empowering Communities Through Sustainable Living
+                    </h1>
+                  </div>
+                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
+                    <p className="text-[15px]/[22.5px] text-white font-normal tracking-[-0.9px] text-start">
+                      Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.
+                    </p>
+                    <div className="flex flex-col items-center justify-center gap-4 w-full sm:flex-row sm:justify-start">
+                      <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="Join the movement">
+                        <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                          join the movement
+                        </span>
+                        <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
+                      </button>
+                      <button className="flex gap-2 justify-center items-center rounded-[8px] bg-transparent border border-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="explore eco-friendly businesses">
+                        <span className="text-[#169B4C] text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                          explore eco-friendly businesses
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
       </header>
       <main className="">
         {/* How our Platform works */}
@@ -225,12 +247,12 @@ export default function Home() {
                           </h3>
                           <img src="./Images/icons/green-right-arrow.svg" alt="" className="size-6" />
                         </div>
-                        <p className={`text-[15px]/[22.5px] tracking-[-0.9px] font-normal text-[#999999] ${activeStepper === index ? 'block' : 'hidden'}`}>
+                        <p className={`text-[15px]/[22.5px] tracking-[-0.9px] font-normal text-[#999999] ${ activeStepper === index ? 'block' : 'hidden'}`}>
                           {item.description}
                         </p>
                       </div>
                       <div className="w-full h-[2px] bg-[#333333]">
-                        <div className={`h-full bg-[#169B4C] transition-all duration-[5000] ease-linear ${activeStepper === index ? 'block animate-width' : 'hidden'}`}></div>
+                        <div className={`h-full bg-[#169B4C] transition-all ease-linear ${ activeStepper === index ? 'block animate-width' : 'hidden'}`} style={{animationDuration: `${duration}`}}></div>
                       </div>
                     </div>
                   ))
@@ -257,24 +279,10 @@ export default function Home() {
                   </a>
                 </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:grid sm:grid-cols-3 gap-6">
               {
-                resourceHub.map((item,index) => (
-                  <div className="flex flex-col gap-2 md:gap-4 md:flex-1" key={index}>
-                    <div className="flex items-start justify-start rounded-[8px] p-3 h-[230px] bg-cover bg-center bg-no-repeat md:h-[310px] w-full bg-[#F5F7FA]" style={{backgroundImage: `url(${item.image})`}}>
-                      <div className="flex items-center justify-center rounded-[24px] py-1 px-5 backdrop-blur-[2px] bg-[#FFFFFF33] border border-[#E6E6E64D]">
-                        <span className="text-[13px]/[19.5px] font-normal text-white tracking-[-0.78px] capitalize md:text-[14px]/[21px] md:tracking-[-0.84px]">{item.type}</span>
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-black text-[19px]/[19px] font-normal tracking-[-1.14px] md:text-[21px]/[25px] md:tracking-[-1.26px]">
-                        {item.title}
-                      </h3>
-                      <p className="text-[15px]/[22.5px] text-[#666666] font-normal tracking-[-0.9px] md:text-[16px]/[24px] md:tracking-[-0.96px]">
-                        {item.subtitle}
-                      </p>
-                    </div>
-                  </div>
+                resourceHub.slice(0,3).map((item,index) => (
+                  <BlogCard image={item.image} type={item.type} title={item.title} subtitle={item.subtitle} key={index} />
                 ))
               }
             </div>
@@ -340,68 +348,9 @@ export default function Home() {
               </div>
             </div>
             {/* mobile and tablet testimonials layout */}
-            <div className="flex flex-col gap-3 sm:flex-row lg:hidden">
-              {
-                testimonials.map((item, index) => (
-                  <div className="py-5 px-2.5 rounded-[12px] border border-[#E6E6E6] bg-[#F5F7FA]" key={index}>
-                    <div className="flex flex-col gap-5 items-start">
-                      <div className="rounded-[24px] py-1 px-5 bg-[#EDEDED]">
-                        <span className="text-[13px]/[19.5px] tracking-[-0.78px] text-black">{item.type}</span>
-                      </div>
-                      <div className="h-[320px] w-full rounded-[8px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}></div>
-                      <div className="flex flex-col justify-between items-start">
-                        <div className="flex flex-col justify-center items-start gap-10">
-                          <p className="text-[19px]/[19px] font-normal tracking-[-1.14px] text-black">
-                            {item.title}
-                          </p>
-                          <p className="text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-black capitalize">
-                            – {item.name}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
+            <MobileTestimonials />
             {/* desktop testimonial slider */}
-            <div className="hidden lg:flex">
-              <Swiper
-                slidesPerView={1.3}
-                spaceBetween={24}
-                className="mySwiper flex flex-col gap-6 md:flex-row flex-1"
-                grabCursor={true}
-                modules={[Navigation]}
-                navigation={{
-                  prevEl: prevRef.current,
-                  nextEl: nextRef.current,
-                }}
-                onBeforeInit={onBeforeInit}
-              >
-                {
-                  testimonials.map((item, index) => (
-                    <SwiperSlide className="p-5 rounded-[12px] border border-[#E6E6E6] bg-[#F5F7FA]" key={index}>
-                      <div className="grid grid-cols-[40%_1fr] gap-10">
-                        <div className="flex flex-col justify-between items-start">
-                          <div className="rounded-[24px] py-1 px-5 bg-[#EDEDED]">
-                            <span className="text-[14px]/[21px] tracking-[-0.84px] text-black">{item.type}</span>
-                          </div>
-                          <div className="flex flex-col justify-center items-start gap-10">
-                            <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black">
-                              {item.title}
-                            </p>
-                            <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black capitalize">
-                              – {item.name}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="h-[500px] rounded-[8px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}></div>
-                      </div>
-                    </SwiperSlide>
-                  ))
-                }
-              </Swiper>
-            </div>
+            <Testimonials />
           </div>
         </section>
       </main>

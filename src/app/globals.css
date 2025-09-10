@@ -251,8 +251,5 @@ body {
 }
 
 .animate-width {
-  animation: width 5s linear forwards;
+  animation: width 3s linear forwards;
 }
-
-/* Accordion styles */
-
