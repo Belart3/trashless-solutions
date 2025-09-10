@@ -14,6 +14,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import BlogCard from "@/components/BlogCard";
 import { useInView } from "framer-motion";
+import Testimonials from "@/components/Testimonials";
+import MobileTestimonials from "@/components/MobileTestimonials";
 
 export default function Home() {
   const prevRef = useRef(null);
@@ -346,68 +348,9 @@ export default function Home() {
               </div>
             </div>
             {/* mobile and tablet testimonials layout */}
-            <div className="flex flex-col gap-3 sm:flex-row lg:hidden">
-              {
-                testimonials.map((item, index) => (
-                  <div className="py-5 px-2.5 rounded-[12px] border border-[#E6E6E6] bg-[#F5F7FA]" key={index}>
-                    <div className="flex flex-col gap-5 items-start">
-                      <div className="rounded-[24px] py-1 px-5 bg-[#EDEDED]">
-                        <span className="text-[13px]/[19.5px] tracking-[-0.78px] text-black">{item.type}</span>
-                      </div>
-                      <div className="h-[320px] w-full rounded-[8px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}></div>
-                      <div className="flex flex-col justify-between items-start">
-                        <div className="flex flex-col justify-center items-start gap-10">
-                          <p className="text-[19px]/[19px] font-normal tracking-[-1.14px] text-black">
-                            {item.title}
-                          </p>
-                          <p className="text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-black capitalize">
-                            – {item.name}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
+            <MobileTestimonials />
             {/* desktop testimonial slider */}
-            <div className="hidden lg:flex">
-              <Swiper
-                slidesPerView={1.3}
-                spaceBetween={24}
-                className="mySwiper flex flex-col gap-6 md:flex-row flex-1"
-                grabCursor={true}
-                modules={[Navigation]}
-                navigation={{
-                  prevEl: prevRef.current,
-                  nextEl: nextRef.current,
-                }}
-                onBeforeInit={onBeforeInit}
-              >
-                {
-                  testimonials.map((item, index) => (
-                    <SwiperSlide className="p-5 rounded-[12px] border border-[#E6E6E6] bg-[#F5F7FA]" key={index}>
-                      <div className="grid grid-cols-[40%_1fr] gap-10">
-                        <div className="flex flex-col justify-between items-start">
-                          <div className="rounded-[24px] py-1 px-5 bg-[#EDEDED]">
-                            <span className="text-[14px]/[21px] tracking-[-0.84px] text-black">{item.type}</span>
-                          </div>
-                          <div className="flex flex-col justify-center items-start gap-10">
-                            <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black">
-                              {item.title}
-                            </p>
-                            <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black capitalize">
-                              – {item.name}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="h-[500px] rounded-[8px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}></div>
-                      </div>
-                    </SwiperSlide>
-                  ))
-                }
-              </Swiper>
-            </div>
+            <Testimonials />
           </div>
         </section>
       </main>
