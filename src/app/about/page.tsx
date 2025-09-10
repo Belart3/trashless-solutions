@@ -2,23 +2,24 @@ import Accordion from "@/components/Accordion";
 import whatWeStandFor from "@/data/whatWeStandFor.json"
 import CardItem from "@/components/CardItem";
 import WhoWeServe from "@/components/whoWeServe";
+import howWeWork from "@/data/howWeWork.json"
 
 export default function AboutPage() {
     return (
         <main>
-        <section className="flex flex-col gap-16">
+        <section className="flex flex-col gap-16 pb-30">
             <section className="px-4 pb-4 md:px-14">
                 <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
 
-                    <div>
-                        <div className="bg-[url('/Images/about/mission.png')] lg:bg-[url('/Images/about/missionBig.png')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
+                    <div className="flex flex-col gap-4">
+                        <div className="bg-[url('/Images/about/our-mission-sustainability-for-everyone.webp')] lg:bg-[url('/Images/about/our-mission-sustainability-for-everyone-Big.webp')] bg-cover bg-center w-full h-[290px] md:h-[460px] rounded-xl"/>
                     </div>
 
-                    <div className="md:grid md:grid-cols-2 md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
+                    <div className="md:flex md:flex-row md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
 
                     {/* Left section */}
-                    <div className="flex flex-col gap-6 max-w-[450px]">
-                        <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit max-w-[200px] justify-center">
+                    <div className="flex flex-col gap-6 w-fit ">
+                        <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full  justify-center">
                         <h1 className="text-[13px] text-[#169B4C] text-center whitespace-nowrap">
                             Our Purpose
                         </h1>
@@ -69,11 +70,11 @@ export default function AboutPage() {
             </section>
 
             <section className="px-4 py-8 flex flex-col gap-16 md:px-14 lg:mx-auto lg:max-w-[1440px]">
-                <div className="flex flex-col gap-14 lg:gap-[65px] lg:grid lg:grid-cols-2  lg:mx-auto lg:px-[169px]">
+                <div className="flex flex-col gap-14 lg:gap-[65px] lg:flex-row lg:flex  lg:mx-auto lg:px-[169px]">
 
                     <div className="flex flex-col gap-3">
 
-                                <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit max-w-[200px] justify-center">
+                                <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit justify-center">
                                     <h1 className="text-[13px] text-[#169B4C] text-center whitespace-nowrap">
                                         How We Work
                                     </h1>
@@ -83,7 +84,7 @@ export default function AboutPage() {
                     </div>
 
                     <div>
-                        <Accordion />
+                        <Accordion items={howWeWork} />
                     </div>
                 </div>
             </section>

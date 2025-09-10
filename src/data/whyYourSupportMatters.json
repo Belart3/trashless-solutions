@@ -1,0 +1,28 @@
+[
+    {   "id": 1,
+        "title": "Organize more clean-up drives and waste education programs",
+        "icon": "/Images/icons/community.svg",
+        "description": ""
+    },
+
+    {
+        "id": 2,
+        "title": "Provide eco business grants and exposure to local green entrepreneurs",
+        "icon": "/Images/icons/community.svg",
+        "description": ""
+    },
+
+    {
+        "id": 3,
+        "title": "Develop free, localized educational content for schools and communities",
+        "icon": "/Images/icons/community.svg",
+        "description": ""
+    },
+
+        {
+        "id": 4,
+        "title": "Plant trees, reduce pollution, and protect local ecosystems",
+        "icon": "/Images/icons/community.svg",
+        "description": ""
+    }
+]

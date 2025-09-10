@@ -1,12 +1,22 @@
+"use client"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
-import accordionData from "@/data/accordionData.json"
 
-export default function ExamplePage() {
+type AccordionItemType = {
+  value: string
+  title: string
+  content: string
+}
+
+type CustomAccordionProps = {
+  items: AccordionItemType[]
+}
+
+export default function ExamplePage({ items }: CustomAccordionProps) {
   return (
     <Accordion type="single" collapsible className="w-full">
-      {accordionData.map((item) => (
-        <AccordionItem key={item.value} value={item.value}>
-          <AccordionTrigger className="cursor:pointer">
+      {items.map((item) => (
+        <AccordionItem key={item.value} value={item.value} className="cursor-pointer">
+          <AccordionTrigger className="cursor-pointer">
             <p className="text-[19px]">{item.title}</p>
           </AccordionTrigger>
           <AccordionContent className="pt-14">
