@@ -21,11 +21,16 @@ export default function Location({ items }: LocationProps) {
             className={`px-5 flex h-12 justify-center items-center gap-2 rounded-full border w-fit cursor-pointer transition-colors
               ${
                 isSelected
-                  ? "border-green-600 text-green-600 bg-[#E8F5ED]"
-                  : "border-gray-300 text-gray-700 hover:bg-[#E8F5ED] hover:text-gray-700"
+                  ? "border-green-600 bg-[#E8F5ED]"
+                  : "border-gray-300 hover:bg-[#E8F5ED]"
               }`}
           >
-            <p className="text-[15px] text-center font-medium">{item.title}</p>
+            <p
+              className={`text-[15px] md:text-[16px] text-center font-medium leading-[100%] tracking-[-0.96px]
+                ${isSelected ? "text-green-600" : "text-[#666]"}`}
+            >
+              {item.title}
+            </p>
           </button>
         )
       })}
