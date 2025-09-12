@@ -172,20 +172,16 @@ export default function DonationPage() {
 
                     <div className="flex flex-col gap-3">
 
-                  <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full  justify-center items-center w-fit">
+                                <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit justify-center">
+                                    <h1 className="text-[13px] md:text-[14px] leading-[150%] tracking-[-0.78px] md:tracking-[-0.84px] text-[#169B4C] text-center whitespace-nowrap">
+                                        Need Help?
+                                    </h1>
+                                </div>
 
-                        <h1 className="text-[13px] md:text-[14px] text-[#169B4C] text-center whitespace-nowrap md:tracking-[-0.84px] leading-[150%] tracking-[-0.78px]">
-                            Need Help?
-                        </h1>
-
+                        <h2 className="text-[26px] md:text-[30px] text-black font-normal leading-[120%] tracking-[-1.56px] md:tracking-[-1.8px]">Frequently Asked Questions</h2>
                     </div>
 
-              <h2 className="text-[26px] md:text-[30px] text-black font-normal tracking-[-1.56px] leading-[100%] md:leading-[120%] md:tracking-[-1.8px]">
-                Frequently Asked Questions
-              </h2>
-                    </div>
-
-                    <div>
+                    <div className="max-w-[540px]">
                         <Accordion items={needHelp} />
                     </div>
                 </div>

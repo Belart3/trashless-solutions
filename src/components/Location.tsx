@@ -1,23 +1,20 @@
 "use client"
 
-import { useState } from "react"
-
 type LocationProps = {
   items: { title: string }[]
+  selected: number
+  onSelect: (index: number) => void
 }
 
-export default function Location({ items }: LocationProps) {
-  const [selected, setSelected] = useState(0) // default first item
-
+export default function Location({ items, selected, onSelect }: LocationProps) {
   return (
     <div className="flex flex-wrap gap-3">
       {items.map((item, index) => {
         const isSelected = selected === index
-
         return (
           <button
             key={index}
-            onClick={() => setSelected(index)}
+            onClick={() => onSelect(index)}
             className={`px-5 flex h-12 justify-center items-center gap-2 rounded-full border w-fit cursor-pointer transition-colors
               ${
                 isSelected
@@ -26,7 +23,7 @@ export default function Location({ items }: LocationProps) {
               }`}
           >
             <p
-              className={`text-[15px] md:text-[16px] text-center font-medium leading-[100%] tracking-[-0.96px]
+              className={`text-[15px] md:text-[16px] font-medium
                 ${isSelected ? "text-green-600" : "text-[#666]"}`}
             >
               {item.title}
