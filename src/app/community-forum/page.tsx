@@ -29,7 +29,7 @@ const page = () => {
                 {/*  */}
                 <div className="flex flex-col gap-16">
                     <div className="flex flex-col gap-8">
-                        <div className="border-t border-[#E6E6E6] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-center lg:justify-center">
+                        <div className="border-t border-[#E6E6E6] pt-8 flex flex-col gap-4 sm:grid sm:grid-cols-2 lg:flex lg:flex-col lg:items-center lg:justify-center">
                         {
                             communityForum.length > 0 ?
                             communityForum.slice(0, contentToDisplay).map((event, index) => (

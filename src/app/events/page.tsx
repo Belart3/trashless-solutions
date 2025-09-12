@@ -3,6 +3,7 @@ import React from 'react'
 import eventFilters from '@/data/eventFilters.json'
 import events from '@/data/events.json'
 import { useState } from 'react'
+import NotFound from '@/components/NotFound'
 
 type FilterType = 'event' | 'location' | 'type';
 
@@ -105,7 +106,7 @@ const page = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-8">
-                        <div className="border-t border-[#E6E6E6] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-center lg:justify-center">
+                        <div className="border-t border-[#E6E6E6] pt-8 flex flex-col gap-4 sm:grid sm:grid-cols-2 lg:flex lg:flex-col lg:items-center lg:justify-center">
                         {
                             filteredEvents.length > 0 ?
                             filteredEvents.slice(0, contentToDisplay).map((event, index) => (
@@ -147,9 +148,7 @@ const page = () => {
                                 </div>
                             ))
                             : 
-                            <div className="h-[300px] flex items-center justify-center rounded-[12px] px-5 py-0 border border-[#E6E6E6] w-full">
-                                <p className="text-[15px]/[22.5px] font-normal tracking-[-0.9px] text-[#666666] lg:text-[16px]/[24px] lg:tracking-[-0.96px] capitalize">no events to show</p>
-                            </div>
+                            <NotFound label='no events to show'/>
                         }
                         </div>
                         {
