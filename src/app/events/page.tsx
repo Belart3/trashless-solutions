@@ -5,12 +5,22 @@ import events from '@/data/events.json'
 import { useState } from 'react'
 
 const page = () => {
-    const [activeFilter, setActiveFilter] = useState('all')
-    const [activeCategory, setActiveCategory] = useState('event')
+    const [activeCategory, setActiveCategory] = useState<string[]>(['event','location','type'])
+    const [activeEvent, setActiveEvent] = useState('all')
+    const [activeLocation, setActiveLocation] = useState('all')
+    const [activeType, setActiveType] = useState('all')
+    const [activeFilter, setActiveFilter] = useState<string[]>([activeEvent, activeLocation, activeType])
+    const [contentToDisplay, setContentToDisplay] = useState(3)
     const toggleFilter = (filter: string, type:string) => {
-        if (filter) {
-            setActiveFilter(filter);
-            setActiveCategory(type);
+        if (type === 'event') {
+            setActiveEvent(filter.toLowerCase())
+            setActiveFilter([filter.toLowerCase(), activeLocation, activeType])
+        } else if (type === 'location') {
+            setActiveLocation(filter.toLowerCase())
+            setActiveFilter([activeEvent, filter.toLowerCase(), activeType])
+        } else if (type === 'type') {
+            setActiveType(filter.toLowerCase())
+            setActiveFilter([activeEvent, activeLocation, filter.toLowerCase()])
         }
     }
     return (
@@ -51,15 +61,15 @@ const page = () => {
                                         </p>
                                         <div className="flex flex-row flex-wrap gap-3">
                                             {
-                                                filterCategory.categories.map((name, idx) => (
-                                                    <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeFilter.includes(name) && activeCategory.includes(filterCategory.type) ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
+                                                filterCategory.categories.map((filter, idx) => (
+                                                    <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeCategory.includes(filterCategory.type) && activeFilter.includes(filter) ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
                                                         onClick={
                                                             () => {
-                                                                toggleFilter(name, filterCategory.type)
+                                                                toggleFilter(filter, filterCategory.type)
                                                             }
                                                         } 
                                                     >
-                                                        {name}
+                                                        {filter}
                                                     </button>    
                                                 ))
                                             }
@@ -72,7 +82,16 @@ const page = () => {
                     <div className="flex flex-col gap-8">
                         <div className="border-t border-[#E6E6E6] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-center lg:justify-center">
                         {
-                            events.map((event, index) => (
+                            events.filter((event) => {
+                                if (activeEvent === 'all' && activeLocation === 'all' && activeType === 'all') {
+                                    return true;
+                                }
+                                
+                                const matchesEvent = activeEvent === 'all' || event.meta.event === activeEvent;
+                                const matchesLocation = activeLocation === 'all' || event.meta.location === activeLocation;
+                                const matchesType = activeType === 'all' || event.meta.type === activeType;
+                                return matchesEvent && matchesLocation && matchesType;
+                            }).slice(0, contentToDisplay).map((event, index) => (
                                 <div className="p-2.5 rounded-[12px] flex flex-col gap-6 border border-[#E6E6E6] bg-[#F5F7FA] lg:flex-row lg:p-5 lg:gap-10" key={index}>
                                     <div className="rounded-[8px] w-full h-[230px] bg-cover bg-center bg-no-repeat lg:w-[300px] lg:h-[280px] lg:shrink-0" style={{backgroundImage: `url(${event.image})`}}></div>
                                     <div className="flex flex-col gap-5 items-start justify-center">
@@ -83,7 +102,7 @@ const page = () => {
                                             </div>
                                             <div className="px-5 flex flex-row gap-2 rounded-[32px] items-center justify-center border border-[#E6E6E6] text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-center text-black w-fit h-10">
                                                 <img src="./Images/icons/location.svg" alt="calendar icon" className='size-6'/>
-                                                <span>{event.location}</span>
+                                                <span className='capitalize'>{event.meta.location + ' - ' + event.meta.type}</span>
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-2 items-start justify-center lg:gap-3">
@@ -112,7 +131,7 @@ const page = () => {
                             ))
                         }
                         </div>
-                        <button className="border border-[#E6E6E6] rounded-[8px] px-5 h-12 w-full text-[15px]/[15px] tracking-[-0.9px] capitalize font-medium text-[#169B4C] lg:w-fit lg:text-[16px]/[16px] lg:tracking-[-0.96px] place-self-center cursor-pointer" aria-label="load more events">
+                        <button className="border border-[#E6E6E6] rounded-[8px] px-5 h-12 w-full text-[15px]/[15px] tracking-[-0.9px] capitalize font-medium text-[#169B4C] lg:w-fit lg:text-[16px]/[16px] lg:tracking-[-0.96px] place-self-center cursor-pointer" aria-label="load more events" onClick={() => setContentToDisplay(contentToDisplay + 3)}>
                             load more events
                         </button>
                         <div className="h-px w-full bg-[#E6E6E6]"></div>

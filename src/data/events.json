@@ -6,7 +6,12 @@
         "location": "Tarkwa Bay, Lagos",
         "cta": "register now",
         "url": "",
-        "image": "./Images/plastic-free-lagos-cleanup.webp"
+        "image": "./Images/plastic-free-lagos-cleanup.webp",
+        "meta": {
+            "event": "world climate events",
+            "location": "abuja",
+            "type": "virtual"
+        }
     },
     {
         "title": "DIY Composting Workshop",
@@ -15,6 +20,81 @@
         "location": "Online — Zoom",
         "cta": "Save My Spot",
         "url": "",
-        "image": "./Images/how-to-start-composting-at-home.webp"
+        "image": "./Images/how-to-start-composting-at-home.webp",
+        "meta": {
+            "event": "community cleanups",
+            "location": "lagos",
+            "type": "in-person"
+        }
+    },
+    {
+        "title": "DIY Composting Workshop",
+        "description": "Learn how to reduce food waste and enrich your garden with expert-led composting.",
+        "date": "Saturday, Aug 18 2025",
+        "location": "Online — Zoom",
+        "cta": "Save My Spot",
+        "url": "",
+        "image": "./Images/how-to-start-composting-at-home.webp",
+        "meta": {
+            "event": "tree planting",
+            "location": "p/harcourt",
+            "type": "in-person"
+        }
+    },
+    {
+        "title": "DIY Composting Workshop",
+        "description": "Learn how to reduce food waste and enrich your garden with expert-led composting.",
+        "date": "Saturday, Aug 18 2025",
+        "location": "Online — Zoom",
+        "cta": "Save My Spot",
+        "url": "",
+        "image": "./Images/how-to-start-composting-at-home.webp",
+        "meta": {
+            "event": "educational workshops",
+            "location": "kano",
+            "type": "virtual"
+        }
+    },
+    {
+        "title": "DIY Composting Workshop",
+        "description": "Learn how to reduce food waste and enrich your garden with expert-led composting.",
+        "date": "Saturday, Aug 18 2025",
+        "location": "Online — Zoom",
+        "cta": "Save My Spot",
+        "url": "",
+        "image": "./Images/how-to-start-composting-at-home.webp",
+        "meta": {
+            "event": "zero-waste challenge",
+            "location": "kaduna",
+            "type": "virtual"
+        }
+    },
+    {
+        "title": "DIY Composting Workshop",
+        "description": "Learn how to reduce food waste and enrich your garden with expert-led composting.",
+        "date": "Saturday, Aug 18 2025",
+        "location": "Online — Zoom",
+        "cta": "Save My Spot",
+        "url": "",
+        "image": "./Images/how-to-start-composting-at-home.webp",
+        "meta": {
+            "event": "virtual webinars",
+            "location": "nasarawa",
+            "type": "virtual"
+        }
+    },
+    {
+        "title": "DIY Composting Workshop",
+        "description": "Learn how to reduce food waste and enrich your garden with expert-led composting.",
+        "date": "Saturday, Aug 18 2025",
+        "location": "Online — Zoom",
+        "cta": "Save My Spot",
+        "url": "",
+        "image": "./Images/how-to-start-composting-at-home.webp",
+        "meta": {
+            "event": "business sustainability meetups",
+            "location": "kaduna",
+            "type": "virtual"
+        }
     }
 ]
