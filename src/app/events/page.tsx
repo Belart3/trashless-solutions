@@ -3,26 +3,52 @@ import React from 'react'
 import eventFilters from '@/data/eventFilters.json'
 import events from '@/data/events.json'
 import { useState } from 'react'
+import NotFound from '@/components/NotFound'
+
+type FilterType = 'event' | 'location' | 'type';
 
 const page = () => {
-    const [activeCategory, setActiveCategory] = useState<string[]>(['event','location','type'])
+    const [activeCategory, setActiveCategory] = useState<FilterType[]>(['event','location','type'])
     const [activeEvent, setActiveEvent] = useState('all')
     const [activeLocation, setActiveLocation] = useState('all')
     const [activeType, setActiveType] = useState('all')
-    const [activeFilter, setActiveFilter] = useState<string[]>([activeEvent, activeLocation, activeType])
+    const [activeFilter, setActiveFilter] = useState<Record<FilterType, string>>({
+        event: 'all',
+        location: 'all',
+        type: 'all'
+    })
     const [contentToDisplay, setContentToDisplay] = useState(3)
-    const toggleFilter = (filter: string, type:string) => {
+    const toggleFilter = (filter: string, type: FilterType) => {
         if (type === 'event') {
             setActiveEvent(filter.toLowerCase())
-            setActiveFilter([filter.toLowerCase(), activeLocation, activeType])
+            setActiveFilter(prev => ({
+                ...prev,
+                event: filter.toLowerCase()
+            }))
         } else if (type === 'location') {
             setActiveLocation(filter.toLowerCase())
-            setActiveFilter([activeEvent, filter.toLowerCase(), activeType])
+            setActiveFilter(prev => ({
+                ...prev,
+                location: filter.toLowerCase()
+            }))
         } else if (type === 'type') {
             setActiveType(filter.toLowerCase())
-            setActiveFilter([activeEvent, activeLocation, filter.toLowerCase()])
+            setActiveFilter(prev => ({
+                ...prev,
+                type: filter.toLowerCase()
+            }))
         }
     }
+    const filteredEvents = events.filter((event) => {
+        if (activeEvent === 'all' && activeLocation === 'all' && activeType === 'all') {
+            return true;
+        }
+        
+        const matchesEvent = activeEvent === 'all' || event.meta.event === activeEvent;
+        const matchesLocation = activeLocation === 'all' || event.meta.location === activeLocation;
+        const matchesType = activeType === 'all' || event.meta.type === activeType;
+        return matchesEvent && matchesLocation && matchesType;
+    })
     return (
         <div className='mx-4 md:mx-14 lg:mx-auto lg:px-14 lg:max-w-[1440px]'>
             <header className='h-fit w-full py-16 px-4 flex flex-col items-center justify-center gap-10 rounded-[8px] bg-[#169B4C] mt-2.5 mb-16 bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/saidu-peter.webp)] bg-cover bg-no-repeat bg-center md:h-[450px] md:px-14 xl:h-[460px] lg:mt-5 lg:mb-[104px]'>
@@ -62,10 +88,10 @@ const page = () => {
                                         <div className="flex flex-row flex-wrap gap-3">
                                             {
                                                 filterCategory.categories.map((filter, idx) => (
-                                                    <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeCategory.includes(filterCategory.type) && activeFilter.includes(filter) ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
+                                                    <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeFilter[filterCategory.type as FilterType] === filter.toLowerCase() ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
                                                         onClick={
                                                             () => {
-                                                                toggleFilter(filter, filterCategory.type)
+                                                                toggleFilter(filter, filterCategory.type as FilterType)
                                                             }
                                                         } 
                                                     >
@@ -80,18 +106,10 @@ const page = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-8">
-                        <div className="border-t border-[#E6E6E6] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-center lg:justify-center">
+                        <div className="border-t border-[#E6E6E6] pt-8 flex flex-col gap-4 sm:grid sm:grid-cols-2 lg:flex lg:flex-col lg:items-center lg:justify-center">
                         {
-                            events.filter((event) => {
-                                if (activeEvent === 'all' && activeLocation === 'all' && activeType === 'all') {
-                                    return true;
-                                }
-                                
-                                const matchesEvent = activeEvent === 'all' || event.meta.event === activeEvent;
-                                const matchesLocation = activeLocation === 'all' || event.meta.location === activeLocation;
-                                const matchesType = activeType === 'all' || event.meta.type === activeType;
-                                return matchesEvent && matchesLocation && matchesType;
-                            }).slice(0, contentToDisplay).map((event, index) => (
+                            filteredEvents.length > 0 ?
+                            filteredEvents.slice(0, contentToDisplay).map((event, index) => (
                                 <div className="p-2.5 rounded-[12px] flex flex-col gap-6 border border-[#E6E6E6] bg-[#F5F7FA] lg:flex-row lg:p-5 lg:gap-10" key={index}>
                                     <div className="rounded-[8px] w-full h-[230px] bg-cover bg-center bg-no-repeat lg:w-[300px] lg:h-[280px] lg:shrink-0" style={{backgroundImage: `url(${event.image})`}}></div>
                                     <div className="flex flex-col gap-5 items-start justify-center">
@@ -129,11 +147,17 @@ const page = () => {
                                     </div>
                                 </div>
                             ))
+                            : 
+                            <NotFound label='no events to show'/>
                         }
                         </div>
-                        <button className="border border-[#E6E6E6] rounded-[8px] px-5 h-12 w-full text-[15px]/[15px] tracking-[-0.9px] capitalize font-medium text-[#169B4C] lg:w-fit lg:text-[16px]/[16px] lg:tracking-[-0.96px] place-self-center cursor-pointer" aria-label="load more events" onClick={() => setContentToDisplay(contentToDisplay + 3)}>
-                            load more events
-                        </button>
+                        {
+                            filteredEvents.length > 0 ?
+                            <button className="border border-[#E6E6E6] rounded-[8px] px-5 h-12 w-full text-[15px]/[15px] tracking-[-0.9px] capitalize font-medium text-[#169B4C] lg:w-fit lg:text-[16px]/[16px] lg:tracking-[-0.96px] place-self-center cursor-pointer" aria-label="load more events" onClick={() => setContentToDisplay(contentToDisplay + 3)}>
+                                load more events
+                            </button>
+                            : null
+                        }
                         <div className="h-px w-full bg-[#E6E6E6]"></div>
                     </div>
                 </div>

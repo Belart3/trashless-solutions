@@ -5,9 +5,8 @@ import ecoConsciousBrands from "@/data/ecoConsciousBrands.json";
 import resourceHub from "@/data/resourceHub.json";
 import ecoEvents from "@/data/ecoEvents.json";
 import differencesMade from "@/data/differencesMade.json";
-import testimonials from "@/data/testimonials.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import CtaCard from "@/components/ctaCard";
 // Import Swiper styles
 import 'swiper/css';
@@ -42,7 +41,7 @@ export default function Home() {
   }, [isInView]);
 
 
-  const onBeforeInit = (swiper) => {
+  const onBeforeInit = (swiper:any) => {
     if (swiper.params.navigation) {
       swiper.params.navigation.prevEl = prevRef.current;
       swiper.params.navigation.nextEl = nextRef.current;
@@ -57,23 +56,26 @@ export default function Home() {
           spaceBetween={16}
           freeMode={true}
           loop={true}
+          pagination={{
+            dynamicBullets: true
+          }}
           grabCursor={true}
           autoplay={{ delay: 3000 }}
-          modules={[Navigation, Autoplay]}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
+          modules={[Autoplay, Pagination]}
+          // navigation={{
+          //   prevEl: prevRef.current,
+          //   nextEl: nextRef.current,
+          // }}
           onBeforeInit={onBeforeInit}
         >
-          <div className="flex-row gap-4 flex z-50 absolute bottom-[220px] left-4 md:bottom-[160px] md:left-[56px]">
+          {/* <div className="flex-row gap-4 flex z-50 absolute bottom-[220px] left-4 md:bottom-[160px] md:left-[56px]">
             <button className="border border-[#333333] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer bg-white" aria-label="previous" ref={prevRef}>
               <img src="./Images/icons/black-left-arrow.svg" alt="left arrow" />
             </button>
             <button className="border border-[#333333] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer bg-white" aria-label="next" ref={nextRef}>
               <img src="./Images/icons/black-right-arrow.svg" alt="right arrow" />
             </button>
-          </div>
+          </div> */}
           {
             ecoConsciousBrands.map((item, index) => (
               <SwiperSlide className="" key={index}>
