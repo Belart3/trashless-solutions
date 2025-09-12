@@ -1,9 +1,8 @@
 import React from 'react'
 import footerNav from '@/data/footerNav.json'
 
-type Props = {}
 
-const Footer = (props: Props) => {
+const Footer = () => {
     return (
         <footer className='bg-[#161814] w-full'>
             <div className="flex flex-col gap-5 px-4 pt-16 md:px-14 lg:mx-auto lg:max-w-[1440px] lg:px-14 lg:pt-16">
@@ -43,13 +42,10 @@ const Footer = (props: Props) => {
                     }
                 </div>
                 <div className="border-y border-[#333333] pt-[15px] px-[6px] md:border-t-0">
-                    <div className="h-[75px] w-full bg-bottom bg-contain bg-no-repeat bg-[url(/Images/breathe.webp)] md:h-[180px]"></div>
+                    <div className="h-[75px] w-full bg-bottom bg-contain bg-no-repeat bg-[url(/Images/trashless-solutions.webp)] md:h-[180px]"></div>
                 </div>
                 <div className="flex flex-col gap-8 items-start justify-center py-[30px] sm:items-center md:items-start md:flex-row-reverse md:justify-between">
                     <div className="flex flex-col gap-6 items-start justify-center sm:items-center md:items-start md:flex-row md:gap-6">
-                        <a href="" className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-[#CCCCCC] capitalize">
-                            GDPR Policy
-                        </a>
                         <a href="" className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-[#CCCCCC] capitalize">
                             Privacy Policy
                         </a>
@@ -58,7 +54,7 @@ const Footer = (props: Props) => {
                         </a>
                     </div>
                     <p className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-[#CCCCCC] capitalize">
-                        © 2025 Breathe Technology Ltd.
+                        © 2025 trashless solutions.
                     </p>
                 </div>
             </div>

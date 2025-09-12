@@ -5,8 +5,8 @@ import { useInView } from "framer-motion";
 
 export default function WhoWeServe() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { amount: 0.5 });
-  // 0.5 means: trigger when 50% of section is visible
+  const isInView = useInView(sectionRef, { amount: 0.4 });
+  // 0.3 means: trigger when 30% of section is visible
 
   return (
     <section
@@ -17,7 +17,7 @@ export default function WhoWeServe() {
         
         {/* Left Column - Image */}
         <div>
-          <div className="bg-[url('/Images/about/leaf.png')] bg-center bg-cover w-full h-[400px] rounded-[8px] md:h-[500px] lg:h-[706px]" />
+          <div className="bg-[url('/Images/about/built-for-people-who-care-about-the-planet.webp')] bg-center bg-cover w-full h-[400px] rounded-[8px] md:h-[500px] lg:h-[706px]" />
         </div>
 
         {/* Right Column - Text */}

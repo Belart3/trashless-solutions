@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "One-Time Donation",
+    "description": "Perfect for those who want to make an immediate impact."
+  },
+  {
+    "id": 2,
+    "title": "Monthly Support",
+    "description": "Become a recurring donor and help us plan long-term initiatives."
+  },
+  {
+    "id": 3,
+    "title": "Give In Someone's Name",
+    "description": "Make a donation as a gift to celebrate birthdays, holidays, or milestones."
+  }
+]

@@ -1,0 +1,8 @@
+[
+  { "title": "Business Name", "type": "text" },
+  { "title": "Business Category", "type": "text" },
+  { "title": "Location", "type": "text" },
+  { "title": "Website Link", "type": "text" },
+  { "title": "Sustainability Statement", "type": "text" },
+  { "title": "Business Description", "type": "textarea" }
+]

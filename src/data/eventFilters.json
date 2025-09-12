@@ -1,6 +1,6 @@
 [
     {
-        "type": "by event",
+        "type": "event",
         "categories": [
             "all",
             "world climate events",
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "type": "by location",
+        "type": "location",
         "categories": [
             "all",
             "abuja",
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "type": "by type",
+        "type": "type",
         "categories": [
             "all",
             "virtual",
