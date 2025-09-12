@@ -14,7 +14,7 @@ export default function AboutPage() {
                     <div className="flex flex-col gap-4">
                         <div className=" bg-gray-900 bg-center w-full h-[290px] md:h-[460px] rounded-xl px-4 py-14">
                             <div className="flex flex-col gap-6 justify-center items-center h-full">
-                                <p className="text-white text-[40px] md:text-[73px] text-center leading-[100%] tracking-[-2.4px] md:leading-[120%] md:tracking-[-4.38px]">Our Mission: Sustainability For Everyone</p>
+                                <p className="text-white text-[40px] md:text-[73px] text-center leading-[100%] tracking-[-2.4px] md:leading-[120%] md:tracking-[-4.38px]">Our Mission: <br />Sustainability For Everyone</p>
                         </div>
                             </div>
 
@@ -33,7 +33,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Right section */}
-                    <div className="flex flex-col gap-4 max-w-[550px]">
+                    <div className="flex flex-col gap-4 max-w-[764px]">
                         <p className="text-black text-[26px] md:text-[30px] md:leading-[120%] md:tracking-[-1.8px]">
                             <span className="text-[#999]">Our platform was created to</span> promote sustainable living practices, support eco-conscious businesses, and help individuals reduce their environmental footprint.
                         </p>
@@ -89,7 +89,7 @@ export default function AboutPage() {
                         <h2 className="text-[26px] md:text-[30px] text-black font-normal leading-[120%] tracking-[-1.56px] md:tracking-[-1.8px]">We Build Tools That Empower Change</h2>
                     </div>
 
-                    <div>
+                    <div className="max-w-[550px]">
                         <Accordion items={howWeWork} />
                     </div>
                 </div>
