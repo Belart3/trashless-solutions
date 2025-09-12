@@ -116,18 +116,18 @@ export default function CardList({ items }: CardListProps) {
 
             {/* Title + Description */}
             <div className="flex flex-col gap-2">
-              <h2 className="text-[19px] font-semibold text-black">
+              <h2 className="text-[19px] md:text-[21px] font-semibold text-black tracking-[-1.14px] leading-[100%] md:leading-[120%] md:tracking-[-1.26px]">
                 {item.title}
               </h2>
               {item.description && (
-                <p className="text-[15px] text-[#666]">{item.description}</p>
+                <p className="text-[15px] md:[14px]  text-[#666] tracking-[-0.9px] leading-[150%] md:leading-[150%] md:tracking-[-0.84px]">{item.description}</p>
               )}
             </div>
 
             {/* Button inside each card */}
             {item.button && (
               <button className="flex flex-row items-center justify-center gap-2 border rounded-md px-4 py-2 bg-[#F5F7FA] text-[#169B4C] font-medium border-[#169B4C] h-12 md:w-fit cursor-pointer hover:bg-[#E8F5ED]">
-                <span className="text-[16px] text-center">
+                <span className="text-[16px] text-center tracking-[-0.96px] leading-[100%]">
                   {item.button.text}
                 </span>
                 <Image
@@ -152,7 +152,7 @@ export default function CardList({ items }: CardListProps) {
             onClick={handleToggle}
             className="flex flex-row items-center justify-center gap-2 border rounded-md px-4 py-2 bg-white text-[#169B4C] font-medium border-[#E6E6E6] h-16 w-full sm:w-auto cursor-pointer hover:bg-[#E8F5ED]"
           >
-            <span className="text-[16px]">
+            <span className="text-[15px] md:text-[14px] text-center tracking-[-0.9px] leading-[100%] md:leading-[150%] md:tracking-[-0.84px]">
               {showCount >= items.length
                 ? "Load Less Businesses"
                 : "Load More Businesses"}

@@ -97,7 +97,7 @@ export default function BizDirectoryPage() {
 
                 <div className="flex flex-col gap-3">
                     <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full  justify-center items-center w-fit">
-                        <h1 className="text-[13px] text-[#169B4C] text-center whitespace-nowrap">
+                        <h1 className="text-[13px] md:text-[14px] text-[#169B4C] text-center whitespace-nowrap md:tracking-[-0.84px] leading-[150%] tracking-[-0.78px]">
                             Are You A Sustainable Brand?
                         </h1>
 
@@ -106,7 +106,7 @@ export default function BizDirectoryPage() {
 <div className="flex flex-col gap-8 md:flex-row md:gap-20">
               {/* Selector */}
               <div className="md:w-1/2">
-                        <h2 className="text-[30px] text-black font-normal">Get featured in our growing directory of eco-friendly businesses in Nigeria. Reach customers who care about the planet and are actively looking to support brands like yours.</h2>
+                        <h2 className="text-[26px] md:text-[30px] leading-[100%] tracking-[-1.56px] md:leading-[120%] md:tracking-[-1.8px] text-black font-normal">Get featured in our growing directory of eco-friendly businesses in Nigeria. Reach customers who care about the planet and are actively looking to support brands like yours.</h2>
               </div>
 
               {/* Donation Form (heading updates with selected option) */}
