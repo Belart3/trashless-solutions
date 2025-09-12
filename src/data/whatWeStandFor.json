@@ -1,21 +1,21 @@
 [
     {   "id": 1,
         "title": "Environmental Impact",
-        "description": "Reducing waste, promoting recycling, and supporting planet-positive practices.",
+        "subtitle": "Reducing waste, promoting recycling, and supporting planet-positive practices.",
         "icon": "/Images/icons/community.svg"
     },
 
     {
         "id": 2,
         "title": "Social Causes & Inclusions",
-        "description": "Encouraging diverse participation and empowering underrepresented communities.",
+        "subtitle": "Encouraging diverse participation and empowering underrepresented communities.",
         "icon": "/Images/icons/community.svg"
     },
 
     {
         "id": 3,
         "title": "Economic Sustainability",
-        "description": "Supporting local eco-friendly businesses and creating green job opportunities.",
+        "subtitle": "Supporting local eco-friendly businesses and creating green job opportunities.",
         "icon": "/Images/icons/community.svg"
     }
 ]

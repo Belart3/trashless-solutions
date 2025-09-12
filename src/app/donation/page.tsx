@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import CardItem from "@/components/CardItem"
+import CtaCard from "@/components/ctaCard";
 import whyYourSupportMatters from "@/data/whyYourSupportMatters.json"
 import Selector from "@/components/Selector"
 import giveOnceOrGiveMonthly from "@/data/giveOnceOrGiveMonthly.json"
@@ -50,14 +50,14 @@ export default function DonationPage() {
 
             {/* Cards */}
             <div className="flex flex-col justify-center gap-3 md:grid md:grid-cols-2 lg:flex-row lg:gap-6 md:gap-6">
-              {whyYourSupportMatters.map((item) => (
-                <CardItem
-                  key={item.id}
-                  title={item.title}
-                  description={item.description}
-                  icon={item.icon}
-                />
-              ))}
+              {whyYourSupportMatters.map((index) => (
+                                <CtaCard
+                                    key={index.id}
+                                    title={index.title}
+                                    icon={index.icon}
+                                    subtitle={index.subtitle}
+                                />
+                            ))}
             </div>
           </div>
         </section>

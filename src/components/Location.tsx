@@ -25,7 +25,7 @@ export default function Location({ items }: LocationProps) {
                   : "border-gray-300 text-gray-700 hover:bg-[#E8F5ED] hover:text-gray-700"
               }`}
           >
-            <p className="text-[15px] text-center font-medium">{item.title}</p>
+            <p className="text-[16px] text-center font-medium leading-[100%] tracking-[-0.96px]">{item.title}</p>
           </button>
         )
       })}
