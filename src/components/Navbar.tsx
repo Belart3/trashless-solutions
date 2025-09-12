@@ -16,9 +16,9 @@ const Navbar = () => {
     const path = usePathname();
 
     return (
-        <div className="">
+        <div className={`${showBanner ? 'pt-[124px] md:pt-[154px]' : 'pt-[84px] md:pt-[94px]'}`}>
             <AdBanner showBanner={showBanner} handleCloseBanner={handleCloseBanner} />
-            <nav className={`mx-4 md:mx-14 lg:px-14 lg:mx-auto lg:max-w-[1440px] transition-all duration-300 ease-in-out ${showBanner ? 'mt-[50px] md:mt-[80px]' : 'mt-[10px] md:mt-[20px]' }`}>
+            <nav className={`mx-4 md:mx-14 lg:px-14 lg:mx-auto lg:max-w-[1440px] transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 ${showBanner ? 'mt-[50px] md:mt-[80px]' : 'mt-[10px] md:mt-[20px]' }`}>
                 <div className='flex items-center justify-between py-3 px-4 border border-[#E6E6E6] rounded-[8px] bg-white mb-[10px] '>
                     <a href="/" className="text-black text-[30px]/[36px] font-normal tracking-[-1.8px] uppercase">logo</a>
                     {/* nav kinks container */}

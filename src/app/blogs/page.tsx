@@ -13,6 +13,7 @@ const resourceCategories = [
 
 const page = () => {
     const [activeFilter, setActiveFilter] = useState('all')
+    const [itemsToShow, setItemsToShow] = useState(6);
     const toggleFilter = (filter: string) => {
         if (filter) {
             setActiveFilter(filter);
@@ -61,16 +62,20 @@ const page = () => {
                 </div>
                 <div className="flex flex-col gap-4 sm:grid sm:grid-cols-3 lg:gap-6">
                     {
-                        resourceHub.map((item,index) => (
-                            <BlogCard image={item.image} type={item.type} title={item.title} subtitle={item.subtitle} key={index} />
+                        resourceHub.filter((item) => {
+                            if (activeFilter === 'all') {
+                                return true;
+                            } else {
+                                return item.category.toLowerCase() === activeFilter.toLowerCase();
+                            }
+                        } ).slice(0, itemsToShow).map((item,index) => (
+                            <BlogCard image={item.image} type={item.category} title={item.title} subtitle={item.subtitle} key={index} />
                         ))
                     }
                 </div>
-                <a href="" className="w-full sm:w-fit shrink-0 sm:mx-auto">
-                    <button className="flex justify-center items-center rounded-[8px] bg-transparent px-5 h-12 cursor-pointer border border-[#169B4C] w-full text-[#169B4C] text-[15px]/[15px] tracking-[-0.9px] font-medium capitalize md:w-fit" aria-label="view full directory">
-                        load more content
-                    </button>
-                </a>
+                <button className="flex justify-center items-center rounded-[8px] bg-transparent px-5 h-12 cursor-pointer border border-[#169B4C] w-full text-[#169B4C] text-[15px]/[15px] tracking-[-0.9px] font-medium capitalize md:w-fit sm:w-fit shrink-0 sm:mx-auto" aria-label="view full directory" onClick={() => setItemsToShow(itemsToShow + 3)}>
+                    load more content
+                </button>
             </div>
         </div>
     )

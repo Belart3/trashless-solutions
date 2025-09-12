@@ -12,10 +12,14 @@ type BusinessSubmissionFormProps = {
 
 export default function BusinessSubmissionForm({ fields, heading }: BusinessSubmissionFormProps) {
   return (
-    <form className="bg-white rounded-lg shadow-md p-6 w-full border">
+    <form className="bg-white rounded-lg shadow-md p-6 w-full border flex flex-col gap-4">
       {/* Heading controlled by parent (Selector choice) */}
-      <h2 className="text-[#169B4C] text-xl font-semibold mb-2">{heading}</h2>
-      <hr className="mb-4 border-gray-300" />
+      <div>
+        <h2 className="text-[#169B4C] text-[26px] md:text-[30px] font-semibold">{heading}</h2>
+      </div>
+      <div>
+        <hr className="border-gray-300" />
+      </div>
 
       <div className="flex flex-col gap-4">
         {fields.map((field, index) => (
