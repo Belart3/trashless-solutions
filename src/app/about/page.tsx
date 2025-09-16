@@ -8,8 +8,8 @@ export default function AboutPage() {
     return (
         <main>
         <section className="flex flex-col gap-16 pb-30">
-            <section className="px-4 pb-4 md:px-14">
-                <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
+            <section className="lg:mx-auto lg:max-w-[1440px]">
+                <div className="px-4 pb-4 md:px-14 flex flex-col gap-16">
 
                     <div className="flex flex-col gap-4">
                         <div className=" bg-gray-900 bg-center w-full h-[290px] md:h-[460px] rounded-xl px-4 py-14">
@@ -23,13 +23,13 @@ export default function AboutPage() {
                     <div className="md:flex md:flex-row md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
 
                     {/* Left section */}
-                    <div className="flex flex-col gap-6 w-fit ">
+                    <div className="flex flex-col gap-6 w-fit shrink-0">
                         <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full  justify-center w-fit">
                             <h1 className="text-[13px] text-[#169B4C] text-center whitespace-nowrap md:tracking-[-0.84px] leading-[150%] tracking-[-0.78px]">
                             Our Purpose
-                        </h1>
+                            </h1>
                         </div>
-                            <h2 className="text-[26px] md:text-[30px] text-black font-normal tracking-[-1.56px] leading-[100%] md:leading-[120%] md:tracking-[-1.8px]">Why we Exist</h2>
+                            <h2 className="text-[26px] md:text-[30px]/[36px] text-black font-normal tracking-[-1.56px] md:leading-[120%] md:tracking-[-1.8px]">Why we Exist</h2>
                     </div>
 
                     {/* Right section */}
@@ -80,11 +80,11 @@ export default function AboutPage() {
 
                     <div className="flex flex-col gap-3">
 
-                                <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit justify-center">
-                                    <h1 className="text-[13px] md:text-[14px] leading-[150%] tracking-[-0.78px] md:tracking-[-0.84px] text-[#169B4C] text-center whitespace-nowrap">
-                                        How We Work
-                                    </h1>
-                                </div>
+                        <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit justify-center">
+                            <h1 className="text-[13px] md:text-[14px] leading-[150%] tracking-[-0.78px] md:tracking-[-0.84px] text-[#169B4C] text-center whitespace-nowrap">
+                                How We Work
+                            </h1>
+                        </div>
 
                         <h2 className="text-[26px] md:text-[30px] text-black font-normal leading-[120%] tracking-[-1.56px] md:tracking-[-1.8px]">We Build Tools That Empower Change</h2>
                     </div>
