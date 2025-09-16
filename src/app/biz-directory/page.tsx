@@ -45,7 +45,7 @@ export default function BizDirectoryPage() {
     <main>
       <section className="flex flex-col gap-16 lg:mx-auto lg:max-w-[1440px] pb-30">
         {/* HERO SECTION */}
-        <section className="px-4 pb-4 md:px-14">
+        <section className="px-4 pb-4 md:px-14 pt-4">
           <div>
             <div className="bg-gray-900 bg-center w-full h-[440px] md:h-[460px] rounded-xl md:px-14 py-16 px-4 flex flex-col gap-10 justify-center items-center">
               <div className="flex flex-col gap-10 items-center">

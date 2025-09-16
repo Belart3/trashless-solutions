@@ -7,19 +7,24 @@ import CtaCard from "@/components/ctaCard";
 export default function AboutPage() {
     return (
         <main>
-        <section className="flex flex-col gap-16 pb-30">
-            <section className="px-4 pb-4 md:px-14">
-                <div className="lg:mx-auto lg:max-w-[1440px] flex flex-col gap-16">
-
-                    <div className="flex flex-col gap-4">
-                        <div className=" bg-gray-900 bg-center w-full h-[290px] md:h-[460px] rounded-xl px-4 py-14">
-                            <div className="flex flex-col gap-6 justify-center items-center h-full">
-                                <p className="text-white text-[40px] md:text-[73px] text-center leading-[100%] tracking-[-2.4px] md:leading-[120%] md:tracking-[-4.38px]">Our Mission: <br />Sustainability For Everyone</p>
+        <section className="flex flex-col gap-16 pb-30 lg:max-w-[1440px] lg:mx-auto">
+            <section className="px-4 pb-4 md:px-14 pt-4">
+                <div className="bg-gray-900 bg-center w-full h-[440px] md:h-[460px] rounded-xl md:px-14 py-16 px-4 flex flex-col gap-10 justify-center items-center">
+                    <div className="flex flex-col gap-10 items-center">
+                      <div className="md:max-w-[1216px]">
+                        <p className="text-white text-[40px] md:text-[73px] text-center md:leading-[120%] md:tracking-[-4.38px] leading-[100%] tracking-[-2.4px]">
+                        Our Mission: <br />Sustainability For Everyone
+                        </p>
+                      </div>
                         </div>
-                            </div>
 
                     </div>
 
+            </section>
+
+
+
+            <section className="px-4 pb-4 md:px-14">
                     <div className="md:flex md:flex-row md:gap-10 lg:gap-16 lg:max-w-[1045px] md:max-w-[800px] md:mx-auto flex flex-col gap-8">
 
                     {/* Left section */}
@@ -45,6 +50,10 @@ export default function AboutPage() {
 
                     </div>
 
+                </section>
+
+
+            <section className="px-4 pb-4 md:px-14">
                     <div className="flex flex-col gap-8">
                         {/* Heading */}
                             <div className="flex py-1 px-5 bg-[#E8F5ED80] rounded-full w-fit max-w-[200px] justify-center">
@@ -67,11 +76,11 @@ export default function AboutPage() {
                             ))}
                         </div>
                     </div>
+                </section>
 
-                </div>
-            </section>
 
-            <section>
+
+            <section className="px-4 pb-4 md:px-14 pt-4">
                 <WhoWeServe />
             </section>
 

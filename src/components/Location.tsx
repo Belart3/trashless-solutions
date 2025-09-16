@@ -23,7 +23,7 @@ export default function Location({ items, selected, onSelect }: LocationProps) {
               }`}
           >
             <p
-              className={`text-[15px] md:text-[16px] font-medium
+              className={`text-[15px]/[100%] md:text-[16px] md:tracking-[-0.96px] tracking-[-0.9px]
                 ${isSelected ? "text-green-600" : "text-[#666]"}`}
             >
               {item.title}

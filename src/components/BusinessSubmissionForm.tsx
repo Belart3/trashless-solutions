@@ -15,7 +15,7 @@ export default function BusinessSubmissionForm({ fields, heading }: BusinessSubm
     <form className="bg-white rounded-lg shadow-md p-6 w-full border flex flex-col gap-4">
       {/* Heading controlled by parent (Selector choice) */}
       <div>
-        <h2 className="text-[#169B4C] text-[26px] md:text-[30px] font-semibold">{heading}</h2>
+        <h2 className="text-[#169B4C] text-[26px]/[100%] tracking-[-1.56px] md:tracking-[-1.8px] md:text-[30px]/[120%] font-semibold">{heading}</h2>
       </div>
       <div>
         <hr className="border-gray-300" />
@@ -27,14 +27,14 @@ export default function BusinessSubmissionForm({ fields, heading }: BusinessSubm
     <textarea
       key={index}
       placeholder={field.title}
-      className="p-3 border rounded-md w-full h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-600"
+      className="p-3 border rounded-md w-full h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-600 text-[15px]/[150%] tracking-[-0.9px] md:text-[16px]/[150%] md:tracking-[-0.72px]"
     />
   ) : (
     <input
       key={index}
       type={field.type}
       placeholder={field.title}
-      className="p-3 border rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-600"
+      className="p-3 border rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-600 text-[15px]/[150%] tracking-[-0.9px] md:text-[16px]/[150%] md:tracking-[-0.72px]"
     />
   )
 ))}
@@ -45,7 +45,7 @@ export default function BusinessSubmissionForm({ fields, heading }: BusinessSubm
         <button
           className="mt-4 w-full md:w-full  font-medium px-4 py-2.5 rounded-sm shadow  transition flex flex-row items-center gap-2 h-[48px] border-[#E6E6E6] border cursor-pointer"
         >
-          <span className="text-[#666] text-[16px]">Upload Logo and 1-3 Product Images</span>
+          <span className="text-[#666] text-[15px]/[150%] tracking-[-0.9px] md:text-[16px]/[150%] md:tracking-[-0.72px]">Upload Logo and 1-3 Product Images</span>
         </button>
       </div>
 
@@ -54,9 +54,9 @@ export default function BusinessSubmissionForm({ fields, heading }: BusinessSubm
       <div className="flex justify-center md:justify-start">
         <button
           type="submit"
-          className="mt-4 w-full md:w-fit bg-[#169B4C] text-white font-medium px-5 py-2.5 rounded-sm shadow hover:bg-green-700 transition flex flex-row items-center justify-center gap-2"
+          className="mt-4 w-full h-[48px] md:w-fit bg-[#169B4C] text-white font-medium px-5 py-2.5 rounded-sm shadow hover:bg-green-700 transition flex flex-row items-center justify-center gap-2"
         >
-          <span>Submit</span>
+          <span className="text-[16px]/[100%] tracking-[-0.96px]">Submit</span>
           <img src="./Images/icons/right-arrow.svg" alt="Submit" />
         </button>
       </div>

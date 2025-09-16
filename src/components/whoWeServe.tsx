@@ -11,7 +11,7 @@ export default function WhoWeServe() {
   return (
     <section
       ref={sectionRef}
-      className="bg-black px-4 py-16 flex flex-col gap-16 md:px-14"
+      className="bg-[#161814] px-4 py-16 flex flex-col gap-16 md:px-14"
     >
       <div className="md:grid md:grid-cols-2 md:gap-10 lg:gap-20 lg:mx-auto lg:max-w-[1440px]">
         

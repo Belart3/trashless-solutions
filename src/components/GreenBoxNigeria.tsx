@@ -95,18 +95,18 @@ export default function CardList({ items }: CardListProps) {
                   <div
                     key={i}
                     className="flex flex-row items-center gap-2 border border-[#E6E6E6] rounded-full w-fit
-                               px-2.5 py-1.5 sm:px-3 sm:py-2 bg-[#F5F7FA] text-black"
+                    px-2.5 py-1.5 sm:px-3 sm:py-2 bg-[#F5F7FA] text-black"
                   >
                     {badge.icon && (
                       <Image
                         src={badge.icon}
                         alt={badge.title}
-                        width={14}
-                        height={14}
-                        className="sm:w-[16px] sm:h-[16px]"
+                        width={16}
+                        height={16}
+                        className="w-[16px] h-[16px]"
                       />
                     )}
-                    <span className="text-xs sm:text-sm font-medium">
+                    <span className="text-[10px]/[120%] tracking-[-0.6px] md:text-[12px]/[150%] md:tracking-[-0.72px]">
                       {badge.title}
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export default function CardList({ items }: CardListProps) {
 
             {/* Title + Description */}
             <div className="flex flex-col gap-2">
-              <h2 className="text-[19px] md:text-[21px] font-semibold text-black tracking-[-1.14px] leading-[100%] md:leading-[120%] md:tracking-[-1.26px]">
+              <h2 className="text-[19px] md:text-[21px] text-black tracking-[-1.14px] leading-[100%] md:leading-[120%] md:tracking-[-1.26px]">
                 {item.title}
               </h2>
               {item.description && (

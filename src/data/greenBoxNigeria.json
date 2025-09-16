@@ -6,26 +6,6 @@
     "image": "/Images/green-box-nigeria.webp",
     "badges": [
       {
-        "title": "Abuja",
-        "icon": "/Images/icons/location-icon.svg"
-      },
-      {
-        "title": "Eco-Friendly Home Products"
-      }
-    ],
-    "button": {
-      "text": "Visit Site",
-      "icon": "/Images/icons/green-right-arrow.svg"
-    }
-  },
-
-  {
-    "title": "GreenBox Nigeria",
-    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
-    "icon": "/Images/icons/green-box-nigeria-black.svg",
-    "image": "/Images/green-box-nigeria.webp",
-    "badges": [
-      {
         "title": "Lagos",
         "icon": "/Images/icons/location-icon.svg"
       },
@@ -40,8 +20,28 @@
   },
 
   {
-    "title": "GreenBox Nigeria",
-    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "title": "EcoSavvy Apparel",
+    "description": "Upcycled denim and minimalist fashion made from scrap fabrics.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Abuja",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "Health & Wellness"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+  {
+    "title": "EarthCare Naturals",
+    "description": "Plant-based lotions and soaps with biodegradable packaging.",
     "icon": "/Images/icons/green-box-nigeria-black.svg",
     "image": "/Images/green-box-nigeria.webp",
     "badges": [

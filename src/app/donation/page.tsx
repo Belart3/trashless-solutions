@@ -25,7 +25,7 @@ export default function DonationPage() {
       <section className="flex flex-col gap-16 lg:mx-auto lg:max-w-[1440px] pb-30">
         {/* Hero Section */}
 
-            <section className="px-4 pb-4 md:px-14">
+            <section className="px-4 pb-4 md:px-14 pt-4">
 
                 <div>
                 <div className="bg-gray-900 bg-center w-full h-[440px] md:h-[460px] rounded-xl md:px-14 py-16 px-4 flex flex-col gap-10 justify-center items-center">
@@ -42,7 +42,7 @@ export default function DonationPage() {
                         className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full md:w-auto"
                         aria-label="Browse Businesses"
                         >
-                        <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                        <span className="text-white text-[15px]/[100%] font-medium tracking-[-0.9px] capitalize">
                             Donate Now
                         </span>
                         <img
