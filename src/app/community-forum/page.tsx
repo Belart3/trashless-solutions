@@ -7,7 +7,7 @@ const page = () => {
     const [contentToDisplay, setContentToDisplay] = useState(5)
     return (
         <div className='mx-4 md:mx-14 lg:mx-auto lg:px-14 lg:max-w-[1440px]'>
-            <header className='h-fit w-full py-16 px-4 flex flex-col items-center justify-center gap-10 rounded-[8px] bg-[#169B4C] mt-2.5 mb-16 bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/saidu-peter.webp)] bg-cover bg-no-repeat bg-center md:h-[450px] md:px-14 xl:h-[460px] lg:mt-5 lg:mb-[104px]'>
+            <header className='h-fit w-full py-16 px-4 flex flex-col items-center justify-center gap-10 rounded-[8px] mt-2.5 mb-16 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/Images/lets-talk-sustainability.webp)] bg-cover bg-no-repeat bg-center md:h-[450px] md:px-14 xl:h-[460px] lg:mt-5 lg:mb-[104px]'>
                 <h1 className="text-[40px]/[40px] tracking-[-2.4px] text-center font-white font-normal text-white capitalize md:text-[53px]/[53px] xl:text-[73px]/[87.6px] xl:tracking-[-4.38px]">
                     Let’s Talk Sustainability  <br /> — Together
                 </h1>

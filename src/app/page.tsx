@@ -16,6 +16,7 @@ import { useInView } from "framer-motion";
 import Testimonials from "@/components/Testimonials";
 import MobileTestimonials from "@/components/MobileTestimonials";
 import testimonials from "@/data/testimonials.json";
+import headerInfo from "@/data/headerInfo.json"
 
 export default function Home() {
   const prevRef = useRef(null);
@@ -78,17 +79,17 @@ export default function Home() {
             </button>
           </div> */}
           {
-            ecoConsciousBrands.map((item, index) => (
-              <SwiperSlide className="" key={index}>
-                <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/saidu-peter.webp)] bg-cover bg-no-repeat bg-center lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
-                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[50%]">
+            headerInfo.map((item, index) => (
+              <SwiperSlide className=" bg-cover bg-no-repeat bg-center rounded-[8px]" style={{backgroundImage: `url(${item.image})`}} key={index}>
+                <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.00),rgb(0,0,0))] lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
+                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
                     <h1 className="text-white text-[40px]/[40px] tracking-[-2.4px] font-normal text-start capitalize">
-                      Empowering Communities Through Sustainable Living
+                      {item.title}
                     </h1>
                   </div>
                   <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
                     <p className="text-[15px]/[22.5px] text-white font-normal tracking-[-0.9px] text-start">
-                      Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.
+                      {item.description}
                     </p>
                     <div className="flex flex-col items-center justify-center gap-4 w-full sm:flex-row sm:justify-start">
                       <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="Join the movement">

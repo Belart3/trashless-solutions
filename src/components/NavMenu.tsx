@@ -48,7 +48,7 @@ export default function NavMenu(props : Props) {
                         <MenuItem 
                             onClick={handleClose} 
                             key={index}
-                            className='!text-[16px]/[16px] !font-normal !tracking-[-0.96px] !capitalize !text-[#999999] hover:!text-white transition-all ease-linear duration-150 hover:!bg-[#169B4C]'
+                            className='!text-[16px]/[16px] !font-normal !tracking-[-0.96px] !capitalize !text-[#999999] hover:!text-[#169B4C] transition-all ease-linear duration-150 hover:!bg-[#169B4C10]'
                         >{item.name}</MenuItem>
                     </a>
                 ))
