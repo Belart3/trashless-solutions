@@ -11,7 +11,7 @@ export default function AboutPage() {
                 <section className="lg:mx-auto lg:max-w-[1440px]">
                     <div className="px-4 pb-4 md:px-14 flex flex-col gap-16">
                         <div className="flex flex-col gap-4">
-                            <div className=" bg-gray-900 bg-center bg-no-repeat bg-cover bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/sustainability-for-everyone.webp)] w-full h-[290px] md:h-[460px] rounded-xl px-4 py-14">
+                            <div className=" bg-gray-900 bg-center bg-no-repeat bg-cover bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/sustainability-for-everyone-mobile.webp)] md:bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/sustainability-for-everyone.webp)] w-full h-[290px] md:h-[460px] rounded-xl px-4 py-14">
                                 <div className="flex flex-col gap-6 justify-center items-center h-full">
                                     <p className="text-white text-[40px] font-normal md:text-[73px]/[87.6px] text-center tracking-[-2.4px] md:leading-[120%] md:tracking-[-4.38px]">
                                         Our Mission: <br />
