@@ -15,6 +15,8 @@ import BlogCard from "@/components/BlogCard";
 import { useInView } from "framer-motion";
 import Testimonials from "@/components/Testimonials";
 import MobileTestimonials from "@/components/MobileTestimonials";
+import testimonials from "@/data/testimonials.json";
+import headerInfo from "@/data/headerInfo.json"
 
 export default function Home() {
   const prevRef = useRef(null);
@@ -77,17 +79,17 @@ export default function Home() {
             </button>
           </div> */}
           {
-            ecoConsciousBrands.map((item, index) => (
-              <SwiperSlide className="" key={index}>
-                <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/saidu-peter.webp)] bg-cover bg-no-repeat bg-center lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
-                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[50%]">
+            headerInfo.map((item, index) => (
+              <SwiperSlide className=" bg-cover bg-no-repeat bg-center rounded-[8px]" style={{backgroundImage: `url(${item.image})`}} key={index}>
+                <div className="py-12 px-4 flex flex-col items-start justify-end gap-4 rounded-[12px] md:h-[700px] h-[700px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.00),rgb(0,0,0))] lg:flex-row md:items-end lg:justify-between lg:py-16 lg:px-14">
+                  <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
                     <h1 className="text-white text-[40px]/[40px] tracking-[-2.4px] font-normal text-start capitalize">
-                      Empowering Communities Through Sustainable Living
+                      {item.title}
                     </h1>
                   </div>
                   <div className="flex flex-col gap-4 items-start justify-center w-full lg:w-[40%]">
                     <p className="text-[15px]/[22.5px] text-white font-normal tracking-[-0.9px] text-start">
-                      Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.
+                      {item.description}
                     </p>
                     <div className="flex flex-col items-center justify-center gap-4 w-full sm:flex-row sm:justify-start">
                       <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="Join the movement">
@@ -352,7 +354,43 @@ export default function Home() {
             {/* mobile and tablet testimonials layout */}
             <MobileTestimonials />
             {/* desktop testimonial slider */}
-            <Testimonials />
+            <div className="hidden lg:flex">
+              <Swiper
+                slidesPerView={1.3}
+                spaceBetween={24}
+                className="mySwiper flex flex-col gap-6 md:flex-row flex-1"
+                grabCursor={true}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: prevRef.current,
+                  nextEl: nextRef.current,
+                }}
+                onBeforeInit={onBeforeInit}
+              >
+              {
+                  testimonials.map((item, index) => (
+                  <SwiperSlide className="p-5 rounded-[12px] border border-[#E6E6E6] bg-[#F5F7FA]" key={index}>
+                      <div className="grid grid-cols-[40%_1fr] gap-10">
+                      <div className="flex flex-col justify-between items-start">
+                          <div className="rounded-[24px] py-1 px-5 bg-[#EDEDED]">
+                          <span className="text-[14px]/[21px] tracking-[-0.84px] text-black">{item.type}</span>
+                          </div>
+                          <div className="flex flex-col justify-center items-start gap-10">
+                          <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black">
+                              {item.title}
+                          </p>
+                          <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black capitalize">
+                              – {item.name}
+                          </p>
+                          </div>
+                      </div>
+                      <div className="h-[500px] rounded-[8px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}></div>
+                      </div>
+                  </SwiperSlide>
+                  ))
+              }
+              </Swiper>
+            </div>
           </div>
         </section>
       </main>

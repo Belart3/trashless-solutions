@@ -9,7 +9,7 @@
         ]
     },
     {
-        "title": "company",
+        "title": "more",
         "menu": [
             { "name": "contact", "href": "/contact" },
             { "name": "donation", "href": "/donation" },
