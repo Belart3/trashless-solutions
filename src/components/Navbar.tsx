@@ -17,7 +17,7 @@ const Navbar = () => {
     const path = usePathname();
 
     return (
-        <div className={`${showBanner ? 'pt-[134px] md:pt-[164px]' : 'pt-[94px] md:pt-[104px]'}`}>
+        <div className={`${showBanner ? 'pt-[134px] md:pt-[184px]' : 'pt-[94px] md:pt-[124px]'}`}>
             <AdBanner showBanner={showBanner} handleCloseBanner={handleCloseBanner} />
             <nav className={`mx-4 md:mx-14 lg:px-14 lg:mx-auto lg:max-w-[1440px] transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-[99] ${showBanner ? 'mt-[50px] md:mt-[80px]' : 'mt-[10px] md:mt-[20px]' }`}>
                 <div className={`flex flex-col gap-[10px] rounded-[8px] border border-[#E6E6E6] bg-white  transition-all duration-150 ease-in-out`}>
