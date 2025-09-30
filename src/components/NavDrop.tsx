@@ -34,8 +34,8 @@ const NavDrop = (props: Props) => {
                 <div className="flex flex-row gap-10 items-start justify-center">
                     <div className="flex flex-col gap-[30px] min-w-[120px]">
                         {
-                            props.menu.map((resource) => (
-                                <a href={resource.href} className="text-[16px]/[16px] font-medium tracking-[-0.96px] capitalize text-black hover:text-[#169B4C] transition-all duration-150 ease-in-out shrink-0">{resource.name}</a>
+                            props.menu.map((resource, index) => (
+                                <a key={index} href={resource.href} className="text-[16px]/[16px] font-medium tracking-[-0.96px] capitalize text-black hover:text-[#169B4C] transition-all duration-150 ease-in-out shrink-0">{resource.name}</a>
                             ))
                         }
                     </div>

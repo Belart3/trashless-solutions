@@ -17,14 +17,15 @@ import Testimonials from "@/components/Testimonials";
 import MobileTestimonials from "@/components/MobileTestimonials";
 import testimonials from "@/data/testimonials.json";
 import headerInfo from "@/data/headerInfo.json"
+import { motion } from "framer-motion";
 
 export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const stepperRef = useRef(null);
-  const isInView = useInView(stepperRef, { once: false, amount: 0.5 });
+  const isInView = useInView(stepperRef, { once: false, amount: 0.4 });
   const [activeStepper, setActiveStepper] = useState(0);
-  const duration = 3000;
+  const duration = 8000;
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
@@ -92,17 +93,21 @@ export default function Home() {
                       {item.description}
                     </p>
                     <div className="flex flex-col items-center justify-center gap-4 w-full sm:flex-row sm:justify-start">
-                      <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="Join the movement">
-                        <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
-                          join the movement
-                        </span>
-                        <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
-                      </button>
-                      <button className="flex gap-2 justify-center items-center rounded-[8px] bg-transparent border border-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="explore eco-friendly businesses">
-                        <span className="text-[#169B4C] text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
-                          explore eco-friendly businesses
-                        </span>
-                      </button>
+                      <a href={item.link}>
+                        <button className="flex gap-2 justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="Join the movement">
+                          <span className="text-white text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                            {item.cta}
+                          </span>
+                          <img src="./Images/icons/right-arrow.svg" alt="join the movement today" />
+                        </button>
+                      </a>
+                      <a href="">
+                        <button className="flex gap-2 justify-center items-center rounded-[8px] bg-transparent border border-[#169B4C] px-5 h-12 cursor-pointer w-full sm:w-fit" aria-label="explore eco-friendly businesses">
+                          <span className="text-[#169B4C] text-[15px]/[15px] font-medium tracking-[-0.9px] capitalize">
+                            explore eco-friendly businesses
+                          </span>
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -153,7 +158,7 @@ export default function Home() {
                     <img src="./Images/icons/right-arrow.svg" alt="right arrow" />
                   </button>
                 </div>
-                <a href="" className="w-full md:w-fit shrink-0">
+                <a href="/biz-directory" className="w-full md:w-fit shrink-0">
                   <button className="flex justify-center items-center rounded-[8px] bg-transparent px-5 h-12 cursor-pointer border border-[#169B4C] w-full text-[#169B4C] text-[15px]/[15px] tracking-[-0.9px] font-medium capitalize md:w-fit" aria-label="view full directory">
                     view full directory
                   </button>
@@ -214,7 +219,7 @@ export default function Home() {
             {/* divider line */}
             <div className="h-px w-full bg-[#333333] my-12"></div>
             {/*  */}
-            <div className="flex flex-col gap-8 md:grid md:grid-cols-[40%_1fr] md:grid-rows-[auto_1fr] md:gap-y-16 md:gap-x-10 lg:gap-x-20">
+            <div className="flex flex-col gap-8 md:grid md:grid-cols-[40%_1fr] md:grid-rows-[auto_1fr] md:gap-y-16 md:gap-x-10 lg:gap-x-20" ref={stepperRef}>
               <div className="flex flex-col gap-3">
                 <div className="px-5 py-1 bg-[#E8F5ED26] rounded-[24px] w-fit">
                   <span className="text-[13px]/[19.5px] tracking-[-0.78px] text-[#169B4C] font-normal">Get Involved: Events & Eco Challenges</span>
@@ -224,7 +229,7 @@ export default function Home() {
                     Participate in local sustainability events or challenge yourself to reduce plastic waste, lower your carbon footprint, or volunteer for change.
                   </h2>
                   <div className="flex items-center justify-start gap-4 w-full">
-                    <a href="" className="w-1/2 md:w-fit">
+                    <a href="/events" className="w-1/2 md:w-fit">
                       <button className="flex justify-center items-center rounded-[8px] bg-[#169B4C] px-5 h-12 cursor-pointer w-full text-white text-[15px]/[15px] tracking-[-0.9px] font-medium capitalize md:w-fit" aria-label="view full directory">
                         view all events
                       </button>
@@ -240,23 +245,39 @@ export default function Home() {
               {/* Image */}
               <div className="h-[230px] bg-cover bg-center bg-no-repeat bg-[url(/Images/world-clean-up-day-lagos-beach.webp)] rounded-[12px] md:h-full place-self-stretch md:row-span-2"></div>
               {/* Eco Events with times progress bar */}
-              <div className="flex flex-col gap-5" ref={stepperRef}>
+              <div className="flex flex-col gap-5">
                 {
                   ecoEvents.map((item, index) => (
                     <div className="flex flex-col gap-5" key={index}>
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-5">
-                          <h3 className={`text-[19px]/[19px] font-normal tracking-[-1.14px] capitalize transition-colors duration-75 ease-linear ${activeStepper === index ? 'text-white' : 'text-[#666666]'}`}>
+                          <motion.h3 
+                          animate={activeStepper === index ? { color: "#FFFFFF" } : { color: "#666666" }}
+                          transition={{ duration: 2, ease: "easeOut" }}
+                          className={`text-[19px]/[19px] font-normal tracking-[-1.14px] capitalize transition-colors duration-75 ease-linear`}>
                             {item.title}
-                          </h3>
-                          <img src="./Images/icons/green-right-arrow.svg" alt="" className="size-6" />
+                          </motion.h3>
+                          <motion.svg 
+                          xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <motion.path 
+                            animate={activeStepper === index ? { fill: "#169B4C" } : { fill: "#666666" }}
+                            transition={{ duration: 2, ease: "easeOut" }}
+                            fill-rule="evenodd" clip-rule="evenodd" d="M20.25 11.5001C17.812 11.5001 15.59 9.27909 15.59 6.84009V5.84009H13.59V6.84009C13.59 8.61409 14.368 10.2781 15.589 11.5001H3.25V13.5001H15.589C14.368 14.7221 13.59 16.3861 13.59 18.1601V19.1601H15.59V18.1601C15.59 15.7211 17.812 13.5001 20.25 13.5001H21.25V11.5001H20.25Z"/>
+                          </motion.svg>
+                          {/* <img src="./Images/icons/green-right-arrow.svg" alt="" className="size-6 stroke-amber-500" /> */}
                         </div>
-                        <p className={`text-[15px]/[22.5px] tracking-[-0.9px] font-normal text-[#999999] ${ activeStepper === index ? 'block' : 'hidden'}`}>
+                        <motion.p 
+                        animate={activeStepper === index ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{ duration: 2, ease: "easeOut" }}
+                        className={`text-[15px]/[22.5px] tracking-[-0.9px] font-normal text-[#999999] ${ activeStepper === index ? 'block' : 'hidden'}`}>
                           {item.description}
-                        </p>
+                        </motion.p>
                       </div>
                       <div className="w-full h-[2px] bg-[#333333]">
-                        <div className={`h-full bg-[#169B4C] transition-all ease-linear ${ activeStepper === index ? 'block animate-width' : 'hidden'}`} style={{animationDuration: `${duration}`}}></div>
+                        <motion.div 
+                        animate={activeStepper === index ? { opacity: 1, width: "100%" } : { opacity: 0.8, width: "0%" }}
+                        transition={{ duration: duration/1000, ease: "easeOut" }}
+                        className={`h-full bg-[#169B4C] transition-all ease-linear ${ activeStepper === index ? 'block' : 'hidden'}`} ></motion.div>
                       </div>
                     </div>
                   ))
@@ -276,7 +297,7 @@ export default function Home() {
                   <h2 className="text-black text-[26px]/[26px] tracking-[-1.56px] font-normal md:w-[60%]">
                     Get access to practical guides, videos, and blogs on how to live a more sustainable lifestyle — from eco-friendly shopping to composting at home.
                   </h2>
-                  <a href="" className="w-full md:w-fit shrink-0">
+                  <a href="/blogs" className="w-full md:w-fit shrink-0">
                     <button className="flex justify-center items-center rounded-[8px] bg-transparent px-5 h-12 cursor-pointer border border-[#169B4C] w-full text-[#169B4C] text-[15px]/[15px] tracking-[-0.9px] font-medium capitalize md:w-fit" aria-label="view full directory">
                       Visit the Resource Hub
                     </button>

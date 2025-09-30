@@ -2,31 +2,43 @@
     {
         "title": "Empowering Communities Through Sustainable Living",
         "description": "Join a growing movement of changemakers embracing eco-friendly habits, zero-waste living, and climate-conscious decisions. Access resources, events, and a green business directory tailored for impact.",
-        "image": "/Images/empowering-communities-through-sustainable-living.webp"
+        "image": "/Images/empowering-communities-through-sustainable-living.webp",
+        "cta": "join the movement",
+        "link": "http://test.l4lh6qmixi-ez94do5je6mr.p.temp-site.link/register"
     },
     {
         "title": "Take Action, Join Local Sustainability Events",
         "description": "From beach cleanups to tree planting and eco workshops, discover opportunities to make a real difference in your community.",
-        "image": "/Images/join-local-sustainability-events.webp"
+        "image": "/Images/join-local-sustainability-events.webp",
+        "cta": "find an event",
+        "link": ""
     },
     {
         "title": "Shop Consciously, Support Eco Businesses",
         "description": "Browse verified Nigerian brands committed to zero-waste, ethical production, and planet-positive innovation.",
-        "image": "/Images/support-eco-businesses.webp"
+        "image": "/Images/support-eco-businesses.webp",
+        "cta": "explore the directory",
+        "link": ""
     },
     {
         "title": "Shop Sustainably. Live Consciously.",
         "description": "Discover eco-friendly products — from organic skincare to upcycled fashion — all vetted for sustainability and impact.",
-        "image": "/Images/discover-eco-friendly-businesses-in-nigeria.webp"
+        "image": "/Images/discover-eco-friendly-businesses-in-nigeria.webp",
+        "cta": "start shopping",
+        "link": ""
     },
     {
         "title": "Learn the Sustainable Way",
         "description": "Access guides, tutorials, and DIY resources to reduce waste, shop responsibly, and build a greener lifestyle.",
-        "image": "/Images/learn-the-sustainable-way.webp"
+        "image": "/Images/learn-the-sustainable-way.webp",
+        "cta": "explore resources",
+        "link": ""
     },
     {
         "title": "Support Sustainability in Nigeria",
         "description": "Your donation funds cleanups, tree planting, and education programs that empower communities to live greener.",
-        "image": "/Images/support-sustainability-in-nigeria-today.webp"
+        "image": "/Images/support-sustainability-in-nigeria-today.webp",
+        "cta": "donate now",
+        "link": ""
     }
 ]
