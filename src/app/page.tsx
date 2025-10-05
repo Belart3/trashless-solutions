@@ -351,6 +351,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         {/* hear from our members */}
         <section className="mx-4 my-16 md:mx-14 lg:mx-auto lg:max-w-[1440px] lg:px-14 lg:my-26">
           <div className="flex flex-col gap-10">

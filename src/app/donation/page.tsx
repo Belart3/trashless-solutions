@@ -9,6 +9,19 @@ import OneTimeForm from "@/components/OneTimeForm"
 import Accordion from "@/components/Accordion";
 import needHelp from "@/data/needHelp.json"
 
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+// Import your data
+import hereForOurMembers from "@/data/hereForOurMembers.json";
+
+// Import your mobile version
+import MobileTestimonials from "@/components/MobileTestimonials";
+
 export default function DonationPage() {
   // Use id for selected state (default to first item’s id)
   const [selected, setSelected] = useState<string | number>(
@@ -19,6 +32,19 @@ export default function DonationPage() {
   const selectedOption =
     giveOnceOrGiveMonthly.find((item) => item.id === selected) ??
     giveOnceOrGiveMonthly[0]
+
+const prevRef = useRef<HTMLButtonElement | null>(null);
+const nextRef = useRef<HTMLButtonElement | null>(null);
+
+// Attach Swiper navigation before initialization
+const onBeforeInit = (swiper: any) => {
+  if (typeof swiper.params.navigation !== "boolean") {
+    swiper.params.navigation.prevEl = prevRef.current;
+    swiper.params.navigation.nextEl = nextRef.current;
+  }
+  swiper.navigation.init();
+  swiper.navigation.update();
+};
 
   return (
     <main>
@@ -140,7 +166,64 @@ export default function DonationPage() {
               </h2>
             </div>
             </div>
+
+        {/* hear from our members */}
+        <div>
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-3 md:gap-6 justify-end items-end">
+                <div className="flex-row gap-4 hidden lg:flex">
+                  <button className="border border-[#E6E6E6] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer" aria-label="previous" ref={prevRef}>
+                    <img src="./Images/icons/black-left-arrow.svg" alt="left arrow" />
+                  </button>
+                  <button className="border border-[#E6E6E6] size-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer" aria-label="next" ref={nextRef}>
+                    <img src="./Images/icons/black-right-arrow.svg" alt="right arrow" />
+                  </button>
+                </div>
+            </div>
+            {/* mobile and tablet testimonials layout */}
+            <MobileTestimonials />
+            {/* desktop testimonial slider */}
+            <div className="hidden lg:flex">
+              <Swiper
+                slidesPerView={1.3}
+                spaceBetween={24}
+                className="mySwiper flex flex-col gap-6 md:flex-row flex-1"
+                grabCursor={true}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: prevRef.current,
+                  nextEl: nextRef.current,
+                }}
+                onBeforeInit={onBeforeInit}
+              >
+              {
+                  hereForOurMembers.map((item, index) => (
+                  <SwiperSlide className="p-5 rounded-[12px] border border-[#E6E6E6] bg-[#F5F7FA]" key={index}>
+                      <div className="grid grid-cols-[40%_1fr] gap-10">
+                      <div className="flex flex-col justify-between items-start">
+                          <div className="rounded-[24px] py-1 px-5 bg-[#EDEDED]">
+                          <span className="text-[14px]/[21px] tracking-[-0.84px] text-black">{item.type}</span>
+                          </div>
+                          <div className="flex flex-col justify-center items-start gap-10">
+                          <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black">
+                              {item.title}
+                          </p>
+                          <p className="text-[21px]/[25px] font-normal tracking-[-1.26px] text-black capitalize">
+                              – {item.name}
+                          </p>
+                          </div>
+                      </div>
+                      <div className="h-[500px] rounded-[8px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}></div>
+                      </div>
+                  </SwiperSlide>
+                  ))
+              }
+              </Swiper>
+            </div>
+          </div>
+        </div>
         </section>
+
         <section className="px-4 py-8 flex flex-col gap-16 md:px-14 lg:mx-auto lg:max-w-[1440px]">
           <div className="flex flex-col gap-14 lg:gap-[65px] lg:flex-row lg:flex  lg:mx-auto lg:px-[169px]">
             <div className="flex flex-col gap-3">
