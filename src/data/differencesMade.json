@@ -2,21 +2,21 @@
     {
         "title": "8,250kg+",
         "subtitle": "Waste Recycled",
-        "image": "/Images/waste-recycled.webp"
+        "image": "/Images/waste-recycled.gif"
     },
     {
         "title": "1,530+",
         "subtitle": "Trees Planted",
-        "image": "/Images/trees-planted.webp"
+        "image": "/Images/trees-planted.gif"
     },
     {
         "title": "5,800",
         "subtitle": "Community Members",
-        "image": "/Images/community-members.webp"
+        "image": "/Images/community-members.gif"
     },
     {
         "title": "120+",
         "subtitle": "Resources Shared",
-        "image": "/Images/resources-shared.webp"
+        "image": "/Images/resources-shared.gif"
     }
 ]
