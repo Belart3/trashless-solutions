@@ -3,17 +3,18 @@
         "title": "resources",
         "menu": [
             { "name": "blogs", "href": "/blogs" },
-            { "name": "case studies", "href": "/case-studies" },
-            { "name": "ebooks", "href": "/ebooks" },
-            { "name": "webinars", "href": "/webinars" }
+            { "name": "guides", "href": "/blogs" },
+            { "name": "videos", "href": "/blogs" },
+            { "name": "school programs", "href": "/blogs" }
         ]
     },
     {
         "title": "more",
         "menu": [
-            { "name": "contact", "href": "/contact" },
-            { "name": "donation", "href": "/donation" },
-            { "name": "legal", "href": "/legal" }
+            { "name": "donate", "href": "/donation" },
+            { "name": "contact us", "href": "/contact" },
+            { "name": "terms & conditions", "href": "/terms-and-conditions" },
+            { "name": "privacy policy", "href": "/privacy-policy" }
         ]
     }
 ]

@@ -15,7 +15,7 @@ export default function Location({ items, selected, onSelect }: LocationProps) {
           <button
             key={index}
             onClick={() => onSelect(index)}
-            className={`px-5 flex h-12 justify-center items-center gap-2 rounded-full border w-fit cursor-pointer transition-colors
+            className={`px-5 flex h-12 justify-center items-center gap-2 rounded-full border w-fit hover:bg-[#E8F5ED] hover:border-transparent  cursor-pointer transition-all ease-linear duration-300 group
               ${
                 isSelected
                   ? "border-green-600 bg-[#E8F5ED]"
@@ -23,8 +23,8 @@ export default function Location({ items, selected, onSelect }: LocationProps) {
               }`}
           >
             <p
-              className={`text-[15px] md:text-[16px] font-medium
-                ${isSelected ? "text-green-600" : "text-[#666]"}`}
+              className={`text-[15px] md:text-[16px]/[16px] tracking-[-0.96px] group-hover:text-[#169B4C] transition-all ease-linear duration-300 font-medium 
+                ${isSelected ? "text-green-600" : "text-[#666666]"}`}
             >
               {item.title}
             </p>

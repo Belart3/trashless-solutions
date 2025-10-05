@@ -23,7 +23,7 @@ export default function NavMenu(props : Props) {
             <Button
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
-                endIcon={<img src="./Images/icons/down-arrow.svg" alt="dropdown arrow" />}
+                endIcon={<img src="./Images/icons/chevron-down.svg" alt="dropdown arrow" />}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
@@ -41,6 +41,7 @@ export default function NavMenu(props : Props) {
                     'aria-labelledby': 'basic-button',
                 },
                 }}
+                className=''
             >    
             {
                 props.menu && props.menu.length > 0 && props.menu.map((item, index) => (

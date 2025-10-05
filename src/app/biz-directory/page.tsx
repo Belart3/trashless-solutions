@@ -47,7 +47,7 @@ export default function BizDirectoryPage() {
         {/* HERO SECTION */}
         <section className="px-4 pb-4 md:px-14">
           <div>
-            <div className="bg-no-repeat bg-cover  bg-[linear-gradient(to_bottom,rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url(/Images/discover-eco-friendly-businesses-in-nigeria.webp)] bg-bottom w-full h-[440px] md:h-[460px] rounded-xl md:px-14 py-16 px-4 flex flex-col gap-10 justify-center items-center">
+            <div className="bg-no-repeat bg-cover bg-[linear-gradient(to_bottom,rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url(/Images/discover-eco-friendly-businesses-in-nigeria-mobile.webp)] md:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url(/Images/discover-eco-friendly-businesses-in-nigeria.webp)] bg-bottom w-full h-[440px] md:h-[460px] rounded-xl md:px-14 py-16 px-4 flex flex-col gap-10 justify-center items-center">
               <div className="flex flex-col gap-10 items-center">
                 <div className="md:max-w-[1216px]">
                   <p className="text-white text-[40px] md:text-[73px] text-center md:leading-[120%] md:tracking-[-4.38px] leading-[100%] tracking-[-2.4px]">
