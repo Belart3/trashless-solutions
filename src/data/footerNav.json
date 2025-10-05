@@ -1,0 +1,28 @@
+[
+    {
+        "title": "quicklinks",
+        "links": [
+            { "name": "about", "url": "/about" },
+            { "name": "community", "url": "/community-forum" },
+            { "name": "events", "url": "/events" },
+            { "name": "biz directory", "url": "/biz-directory" },
+            { "name": "marketplace", "url": "/marketplace" },
+            { "name": "resources", "url": "/blogs" }
+        ]
+    },
+    {
+        "title": "contact",
+        "links": [
+            { "name": "email", "url": "#" },
+            { "name": "phone number", "url": "/" },
+            { "name": "address", "url": "/" }
+        ]
+    },
+    {
+        "title": "socials",
+        "links": [
+            { "name": "instagram", "url": "#" },
+            { "name": "facebook", "url": "/" }
+        ]
+    }
+]

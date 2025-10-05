@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Join the Community",
+        "subtitle": "Sign up and become part of a growing eco-conscious network focused on environmental and social impact.",
+        "icon": "./Images/icons/community.svg"
+    },
+    {
+        "title": "Learn & Share",
+        "subtitle": "Access free educational resources, take part in challenges, and share your sustainability tips.",
+        "icon": "./Images/icons/learn.svg"
+    },
+    {
+        "title": "Take Action Locally",
+        "subtitle": "Discover clean-up events, workshops, and volunteer opportunities near you.",
+        "icon": "./Images/icons/take-action.svg"
+    },
+    {
+        "title": "Support Green Businesses",
+        "subtitle": "Browse our eco-friendly business directory to shop consciously and support local sustainable brands.",
+        "icon": "./Images/icons/support-green-business.svg"
+    }
+]

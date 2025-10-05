@@ -1,0 +1,217 @@
+[
+  {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "2, Alaba Road, Ikeja, Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+  {
+    "title": "EcoSavvy Apparel",
+    "description": "Upcycled denim and minimalist fashion made from scrap fabrics.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "2, Alaba Road, Jabi, Abuja",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Ethical Streetwear"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+  {
+    "title": "EarthCare Naturals",
+    "description": "Plant-based lotions and soaps with biodegradable packaging.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "2, Alaba Road, Ikeja, Ibadan",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Organic Skincare"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+    {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "2, Alaba Road, Ikeja, Lagos",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+    {
+    "title": "GreenBox Nigeria",
+    "description": "Upcycled denim and minimalist fashion made from scrap fabrics.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "2, Alaba Road, Jabi, Abuja",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "EcoSavvy Apparel"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+    {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Nasarawa",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco-Friendly Home Products"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+  {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Kogi",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco-Friendly Home Products"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+  {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Anambra",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco-Friendly Home Products"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  },
+
+  {
+    "title": "GreenBox Nigeria",
+    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "icon": "/Images/icons/green-box-nigeria-black.svg",
+    "image": "/Images/green-box-nigeria.webp",
+    "badges": [
+      {
+        "title": "Enugu",
+        "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco-Friendly Home Products"
+      }
+    ],
+    "button": {
+      "text": "Visit Site",
+      "icon": "/Images/icons/green-right-arrow.svg"
+    }
+  }
+]

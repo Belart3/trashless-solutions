@@ -1,0 +1,22 @@
+[
+    {
+        "name": "About",
+        "href": "/about"
+    },
+    {
+        "name": "community",
+        "href": "/community-forum"
+    },
+    {
+        "name": "events",
+        "href": "/events"
+    },
+    {
+        "name": "biz directory",
+        "href": "/biz-directory"
+    },
+    {
+        "name": "marketplace",
+        "href": "/marketplace"
+    }
+]
