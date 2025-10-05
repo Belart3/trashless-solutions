@@ -6,11 +6,15 @@
     "image": "/Images/green-box-nigeria.webp",
     "badges": [
       {
-        "title": "Abuja",
+        "title": "2, Alaba Road, Ikeja, Lagos",
         "icon": "/Images/icons/location-icon.svg"
       },
       {
-        "title": "Eco-Friendly Home Products"
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
       }
     ],
     "button": {
@@ -20,17 +24,21 @@
   },
 
   {
-    "title": "GreenBox Nigeria",
-    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "title": "EcoSavvy Apparel",
+    "description": "Upcycled denim and minimalist fashion made from scrap fabrics.",
     "icon": "/Images/icons/green-box-nigeria-black.svg",
     "image": "/Images/green-box-nigeria.webp",
     "badges": [
       {
-        "title": "Lagos",
+        "title": "2, Alaba Road, Jabi, Abuja",
         "icon": "/Images/icons/location-icon.svg"
       },
       {
-        "title": "Eco-Friendly Home Products"
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Ethical Streetwear"
       }
     ],
     "button": {
@@ -40,17 +48,21 @@
   },
 
   {
-    "title": "GreenBox Nigeria",
-    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "title": "EarthCare Naturals",
+    "description": "Plant-based lotions and soaps with biodegradable packaging.",
     "icon": "/Images/icons/green-box-nigeria-black.svg",
     "image": "/Images/green-box-nigeria.webp",
     "badges": [
       {
-        "title": "P/Harcourt",
+        "title": "2, Alaba Road, Ikeja, Ibadan",
         "icon": "/Images/icons/location-icon.svg"
       },
       {
-        "title": "Eco-Friendly Home Products"
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Organic Skincare"
       }
     ],
     "button": {
@@ -66,11 +78,15 @@
     "image": "/Images/green-box-nigeria.webp",
     "badges": [
       {
-        "title": "Kano",
+        "title": "2, Alaba Road, Ikeja, Lagos",
         "icon": "/Images/icons/location-icon.svg"
       },
       {
-        "title": "Eco-Friendly Home Products"
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "Eco Home Essentials"
       }
     ],
     "button": {
@@ -81,16 +97,20 @@
 
     {
     "title": "GreenBox Nigeria",
-    "description": "Shop bamboo toothbrushes, reusable cloths, and refillable cleaning solutions.",
+    "description": "Upcycled denim and minimalist fashion made from scrap fabrics.",
     "icon": "/Images/icons/green-box-nigeria-black.svg",
     "image": "/Images/green-box-nigeria.webp",
     "badges": [
       {
-        "title": "Kaduna",
+        "title": "2, Alaba Road, Jabi, Abuja",
         "icon": "/Images/icons/location-icon.svg"
       },
       {
-        "title": "Eco-Friendly Home Products"
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
+        "title": "EcoSavvy Apparel"
       }
     ],
     "button": {
@@ -108,6 +128,10 @@
       {
         "title": "Nasarawa",
         "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
       },
       {
         "title": "Eco-Friendly Home Products"
@@ -130,6 +154,10 @@
         "icon": "/Images/icons/location-icon.svg"
       },
       {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
         "title": "Eco-Friendly Home Products"
       }
     ],
@@ -150,6 +178,10 @@
         "icon": "/Images/icons/location-icon.svg"
       },
       {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
+      },
+      {
         "title": "Eco-Friendly Home Products"
       }
     ],
@@ -168,6 +200,10 @@
       {
         "title": "Enugu",
         "icon": "/Images/icons/location-icon.svg"
+      },
+      {
+        "title": "+2348000000000",
+        "icon": "/Images/icons/phone-icon.svg"
       },
       {
         "title": "Eco-Friendly Home Products"

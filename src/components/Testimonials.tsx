@@ -1,16 +1,13 @@
 import React, { useState, useRef } from "react";
 import testimonials from "@/data/testimonials.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 type Props = {}
 
 const Testimonials = (props: Props) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-    const stepperRef = useRef(null);
-    const [activeStepper, setActiveStepper] = useState(0);
-    const duration = 3000;
 
     const onBeforeInit = (swiper) => {
         if (swiper.params.navigation) {

@@ -51,7 +51,7 @@ const page = () => {
     })
     return (
         <div className='mx-4 md:mx-14 lg:mx-auto lg:px-14 lg:max-w-[1440px]'>
-            <header className='h-fit w-full py-16 px-4 flex flex-col items-center justify-center gap-10 rounded-[8px] bg-[#169B4C] mt-2.5 mb-16 bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/saidu-peter.webp)] bg-cover bg-no-repeat bg-center md:h-[450px] md:px-14 xl:h-[460px] lg:mt-5 lg:mb-[104px]'>
+            <header className='h-fit w-full py-16 px-4 flex flex-col items-center justify-center gap-10 rounded-[8px] mt-2.5 mb-16 bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url(/Images/join-local-sustainability-events.webp)] bg-cover bg-no-repeat bg-center md:h-[450px] md:px-14 xl:h-[460px] lg:mt-5 lg:mb-[104px]'>
                 <h1 className="text-[40px]/[40px] tracking-[-2.4px] text-center font-white font-normal text-white capitalize md:text-[53px]/[53px] xl:text-[73px]/[87.6px] xl:tracking-[-4.38px]">
                     Take Action. <br /> Join Local Sustainability Events.
                 </h1>
@@ -88,7 +88,7 @@ const page = () => {
                                         <div className="flex flex-row flex-wrap gap-3">
                                             {
                                                 filterCategory.categories.map((filter, idx) => (
-                                                    <button className={`px-5 h-10 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeFilter[filterCategory.type as FilterType] === filter.toLowerCase() ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
+                                                    <button className={`px-5 h-12 flex items-center justify-center rounded-[32px] border  w-fit capitalize text-[15px]/[15px] font-medium tracking-[-0.9px] text-center text-[#169B4C] hover:bg-[#E8F5ED] hover:border-transparent hover:text-[#169B4C] cursor-pointer lg:text-[16px]/[16px] lg:tracking-[-0.96px] transition-all ease-linear duration-300 ${activeFilter[filterCategory.type as FilterType] === filter.toLowerCase() ? 'bg-[#E8F5ED] border-[#169B4C] text-[#169B4C]' : 'border-[#E6E6E6] text-[#666666]'}`} key={idx}  
                                                         onClick={
                                                             () => {
                                                                 toggleFilter(filter, filterCategory.type as FilterType)
