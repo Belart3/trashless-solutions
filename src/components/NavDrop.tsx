@@ -23,7 +23,7 @@ const NavDrop = (props: Props) => {
             <button className='flex flex-row gap-2 items-center justify-center cursor-pointer shrink-0 group px-2 xl:px-4'>
                 <span className={`text-[16px]/[16px] font-normal tracking-[-0.96px] capitalize text-[#999999] group-hover/ctn:text-[#169B4C] transition-all duration-150 ease-in-out`}>{props.title}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none" className={`translate-y-1/4 transition-all duration-150 ease-in-out group-hover/ctn:rotate-[180deg]`}>
-                    <path d="M9.5 1.00003C9.5 1.00003 6.55407 5 5.5 5C4.44587 5 1.5 1 1.5 1" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" className='group-hover/ctn:stroke-[#169B4C] transition-all duration-150 ease-in-out'/>
+                    <path d="M9.5 1.00003C9.5 1.00003 6.55407 5 5.5 5C4.44587 5 1.5 1 1.5 1" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className='group-hover/ctn:stroke-[#169B4C] transition-all duration-150 ease-in-out'/>
                 </svg>
             </button>
             <div className={`p-5 rounded-[12px] border border-[#E6E6E6] bg-white hidden flex-col gap-6 absolute top-[100%] -translate-x-1/3 group-hover/ctn:!flex`}>
