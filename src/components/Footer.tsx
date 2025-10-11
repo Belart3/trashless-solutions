@@ -65,7 +65,7 @@ const Footer = () => {
                         <a href="" className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-[#CCCCCC] capitalize">
                             Privacy Policy
                         </a>
-                        <a href="" className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-[#CCCCCC] capitalize">
+                        <a href="/terms-and-conditions" className="text-[13px]/[19.5px] font-normal tracking-[-0.78px] text-[#CCCCCC] capitalize">
                             Terms of Service
                         </a>
                     </div>

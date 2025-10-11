@@ -69,39 +69,38 @@ export default function Legal() {
   return (
     <main className="flex items-start flex-col md:flex-row gap-16 md:gap-20">
       {/* Side div*/}
-      <aside
-        id="legal-sidebar"
-        className="w-[320px] md:w-[280px] lg:w-[320px] md:sticky md:top-[200px]"
-      >
-        <div className="px-5 py-5 rounded-xl border w-full">
-          <ul className="flex flex-col gap-6 text-[#999] text-[16px]/[100%] tracking-[-0.96px] font-medium">
-            {links.map((link) => (
-              <li
-                key={link.id}
-                className={`cursor-pointer transition-colors ${
-                  isDesktop && active === link.id
-                    ? "text-green-600 font-semibold"
-                    : ""
-                }`}
-                onClick={() => {
-                  if (isDesktop) {
-                    const target = document.getElementById(link.id)
-                    if (target) {
-                      const stickyOffset = 200 // 👈 matches md:top-[200px]
-                      const top = target.offsetTop - stickyOffset
-                      window.scrollTo({ top, behavior: "smooth" })
-                      setActive(link.id) // instantly highlight
-                    }
-                  }
-                }}
-              >
-                {link.title}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </aside>
+<aside
+  id="legal-sidebar"
+  className="w-[320px] md:w-[280px] lg:w-[320px] md:sticky md:top-[200px]"
+>
+  <div className="px-5 py-5 rounded-xl border w-full">
+    <ul className="flex flex-col gap-6 text-[#999] text-[16px]/[100%] tracking-[-0.96px] font-medium">
+      {links.map((link) => (
+        <li
+          key={link.id}
+          className={`cursor-pointer transition-colors ${
+            active === link.id ? "text-green-600 font-semibold" : ""
+          }`}
+          onClick={() => {
+            const target = document.getElementById(link.id)
+            setActive(link.id)
 
+            if (target) {
+              const stickyOffset = 200 // 👈 matches md:top-[200px]
+              const top = target.offsetTop - stickyOffset
+              window.scrollTo({
+                top,
+                behavior: "smooth", // ✅ always smooth on all screens
+              })
+            }
+          }}
+        >
+          {link.title}
+        </li>
+      ))}
+    </ul>
+  </div>
+</aside>
       {/* Content */}
       <section className="flex flex-col md:flex-1 gap-8 md:gap-10">
 
